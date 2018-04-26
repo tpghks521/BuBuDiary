@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:id="@+id/calendar_1"
+            android:id="@+id/calendar_01"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -69,7 +69,7 @@
         </LinearLayout>
 <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_2"
+            android:id="@+id/calendar_02"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -110,7 +110,7 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_3"
+            android:id="@+id/calendar_03"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -151,7 +151,7 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_4"
+            android:id="@+id/calendar_04"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -192,7 +192,7 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_5"
+            android:id="@+id/calendar_05"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -233,7 +233,7 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_6"
+            android:id="@+id/calendar_06"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -274,7 +274,7 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_7"
+            android:id="@+id/calendar_07"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -335,7 +335,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
-                android:id="@+id/calendar_8"
+                android:id="@+id/calendar_08"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -376,7 +376,7 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_9"
+                android:id="@+id/calendar_09"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

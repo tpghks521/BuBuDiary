@@ -246,5 +246,16 @@
     </android.support.design.widget.NavigationView>
 
 
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#cc000000"
+        android:id="@+id/floating_view"
+        android:clickable="true"
+        />
+
+
 </android.support.v4.widget.DrawerLayout>
 

@@ -27,18 +27,19 @@ NavigationView navigationView;
     int[] year= new int[150];
     Toolbar toolbar;
     DrawerLayout drawerLayout;
-
+ View floating_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
         saveYear();
+        floating_view=findViewById(R.id.floating_view);
 
         toolbar=findViewById(R.id.toolbar);
         navigationView=findViewById(R.id.cal_navi);
         RecyclerView recyclerView = findViewById(R.id.cal_recyclerview);
-        Calender_Adapter calender_adapter = new Calender_Adapter(this);
+        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view);
         recyclerView.setAdapter(calender_adapter);
 
         setSupportActionBar(toolbar);

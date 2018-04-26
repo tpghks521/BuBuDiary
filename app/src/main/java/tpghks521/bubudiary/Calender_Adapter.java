@@ -30,10 +30,10 @@ import org.xmlpull.v1.XmlPullParser;
 public class Calender_Adapter extends RecyclerView.Adapter {
     Context context;
     VH vh;
-
-    public Calender_Adapter(Context context) {
+    View floating_view;
+    public Calender_Adapter(Context context,View floating_view) {
         this.context = context;
-
+            this.floating_view=floating_view;
     }
 
     @Override
@@ -103,7 +103,7 @@ CoordinatorLayout coordinatorLayout;
 
             }
             for (int i = 0; i < 35; i++) {
-                number_cal_layout[i] = itemView.findViewById(R.id.calendar_1 + i);
+                number_cal_layout[i] = itemView.findViewById(R.id.calendar_01 + i);
                 number_cal_layout[i].setClickable(true);
                 number_cal_layout[i].setOnClickListener(this);
                 number_cal_layout[i].setOnLongClickListener(this);
@@ -187,16 +187,30 @@ CoordinatorLayout coordinatorLayout;
             System.out.println("aaaa");
             Toast.makeText(context, "aaaa", Toast.LENGTH_SHORT).show();
         }
-
+        int clicknum;
         @Override
         public boolean onLongClick(View view) {
 
             for(int i = 0; i < 35; i++){
                 if(number_cal_layout[i]==view){
-                    number_text[i].setBackgroundColor(Color.GREEN);
+                    clicknum=i;
+                    number_text[clicknum].setBackgroundColor(Color.GREEN);
                 }
+
+                floating_view.setVisibility(View.VISIBLE);
+
+
+
+
             }
 
+            floating_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    floating_view.setVisibility(View.GONE);
+                    number_text[clicknum].setBackgroundColor(Color.WHITE);
+                }
+            });
 
 
 
