@@ -2,6 +2,7 @@ package tpghks521.bubudiary;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -31,9 +32,15 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     Context context;
     VH vh;
     View floating_view;
-    public Calender_Adapter(Context context,View floating_view) {
+    FloatingActionButton floatingActionButton;
+    CoordinatorLayout.LayoutParams params;
+    CoordinatorLayout activity_coordinatorLayout;
+    public Calender_Adapter(Context context,View floating_view,FloatingActionButton floatingActionButton,CoordinatorLayout.LayoutParams params,CoordinatorLayout activity_coordinatorLayout) {
         this.context = context;
             this.floating_view=floating_view;
+            this.floatingActionButton=floatingActionButton;
+            this.params=params;
+            this.activity_coordinatorLayout=activity_coordinatorLayout;
     }
 
     @Override
@@ -72,7 +79,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     }
 
 
-    CoordinatorLayout.LayoutParams params;
+
 
     @Override
     public int getItemCount() {
@@ -88,8 +95,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         TextView[] number_text = new TextView[35];
         TextView[] text_list = new TextView[4 * 7 * 5];
         LinearLayout[] number_cal_layout =new LinearLayout[35];
-        FloatingActionButton floatingActionButton;
-CoordinatorLayout coordinatorLayout;
+
 
         public VH(View itemView,Context context) {
              super(itemView);
@@ -116,33 +122,12 @@ CoordinatorLayout coordinatorLayout;
 
             }
 
-            floatingActionButton = new FloatingActionButton(context);
 
 
 
-
-            floatingActionButton.setImageResource(R.drawable.ic_action_palne);
-
+          //
 
 
-
-            params=new CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.WRAP_CONTENT,CoordinatorLayout.LayoutParams.WRAP_CONTENT);
-
-            params.setAnchorId(number_cal_layout[5].getId());
-            params.anchorGravity = Gravity.BOTTOM;
-
-
-            floatingActionButton.setLayoutParams(params);
-            floatingActionButton.setSize(FloatingActionButton.SIZE_MINI);
-            floatingActionButton.setBackgroundColor(Color.WHITE);
-            floatingActionButton.setColorFilter(Color.WHITE);
-           
-
-            coordinatorLayout=itemView.findViewById(R.id.coordinator);
-
-
-
-            coordinatorLayout.addView(floatingActionButton);
 
 
 
@@ -195,9 +180,20 @@ CoordinatorLayout coordinatorLayout;
                 if(number_cal_layout[i]==view){
                     clicknum=i;
                     number_text[clicknum].setBackgroundColor(Color.GREEN);
+                    params.setAnchorId(number_cal_layout[clicknum].getId());
+                    params.anchorGravity = Gravity.BOTTOM;
+                    floatingActionButton.setLayoutParams(params);
+                    floatingActionButton.setSize(FloatingActionButton.SIZE_MINI);
+                    floatingActionButton.setBackgroundColor(0xffffff);
+
+                    floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(0xffffff));
+                    floatingActionButton.setDrawingCacheBackgroundColor(0xffffff);
+                    floating_view.setVisibility(View.VISIBLE);
+
+                    activity_coordinatorLayout.addView(floatingActionButton);
+
                 }
 
-                floating_view.setVisibility(View.VISIBLE);
 
 
 
@@ -209,6 +205,7 @@ CoordinatorLayout coordinatorLayout;
                 public void onClick(View view) {
                     floating_view.setVisibility(View.GONE);
                     number_text[clicknum].setBackgroundColor(Color.WHITE);
+
                 }
             });
 

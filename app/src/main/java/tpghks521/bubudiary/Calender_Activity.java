@@ -6,6 +6,8 @@ import android.app.DatePickerDialog;
 import android.icu.util.Calendar;
 
 import android.os.Build;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
@@ -28,6 +30,10 @@ NavigationView navigationView;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
  View floating_view;
+
+    CoordinatorLayout activity_coordinatorLayout;
+    FloatingActionButton floatingActionButton;
+    CoordinatorLayout.LayoutParams params;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +41,22 @@ NavigationView navigationView;
 
         saveYear();
         floating_view=findViewById(R.id.floating_view);
-
+        activity_coordinatorLayout=findViewById(R.id.activity_coordinatorLayout);
         toolbar=findViewById(R.id.toolbar);
         navigationView=findViewById(R.id.cal_navi);
+
         RecyclerView recyclerView = findViewById(R.id.cal_recyclerview);
-        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view);
+
+
+        floatingActionButton = new FloatingActionButton(this);
+        floatingActionButton.setImageResource(R.drawable.ic_action_palne);
+        params=new CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.WRAP_CONTENT,CoordinatorLayout.LayoutParams.WRAP_CONTENT);
+
+        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view,floatingActionButton,params,activity_coordinatorLayout);
+
+
+
+
         recyclerView.setAdapter(calender_adapter);
 
         setSupportActionBar(toolbar);
