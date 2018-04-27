@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 
 
 /**
@@ -31,13 +32,14 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     FloatingActionButton cal_fab;
     TextView fab_text;
     ViewGroup parent;
-
+    ArrayList<Calendar_Day_calcul_class> calendar_day_calcul_classes;
     int position;
-    public Calender_Adapter(Context context,View floating_view,FloatingActionButton cal_fab,TextView fab_text) {
+    public Calender_Adapter(Context context,View floating_view,FloatingActionButton cal_fab,TextView fab_text,ArrayList<Calendar_Day_calcul_class> calendar_day_calcul_classes) {
         this.context = context;
             this.floating_view=floating_view;
             this.cal_fab=cal_fab;
             this.fab_text=fab_text;
+            this.calendar_day_calcul_classes=calendar_day_calcul_classes;
     }
 
     @Override
@@ -56,6 +58,9 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
        this.position=position;
         vh = (VH) holder;
+
+
+
         for (int i = 0; i < 35; i++) {
             vh.number_text[i].setTextSize(15);
             if (i % 7 == 0) {
@@ -68,7 +73,16 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         }//for (int i = 0; i < 35; i++)
         for (int i = 0; i < 4 * 7 * 5; i++) {
             vh.text_list[i].setText("");
+
         }//for (int i = 0; i < 4 * 7 * 5; i++)
+
+        int datenum=  calendar_day_calcul_classes.get(position).date.length;
+
+
+        for(int i = 0;i<datenum-1;i++){
+          vh.number_text[i].setText( calendar_day_calcul_classes.get(position).date[i]);
+
+        }
 
 
 
@@ -85,7 +99,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 //-------------------------------------------------------------------------------------------------------------
     @Override
     public int getItemCount() {
-        return 2;
+        return 12;
     }//getItemCount
 
     class VH extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {

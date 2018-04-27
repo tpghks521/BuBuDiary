@@ -44,9 +44,9 @@ NavigationView navigationView;
         toolbar=findViewById(R.id.toolbar);
         navigationView=findViewById(R.id.cal_navi);
         RecyclerView recyclerView = findViewById(R.id.cal_recyclerview);
-        saveYear();
-
-        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view,cal_fab,fab_text);
+       // saveYear();
+        cal(2018);
+        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view,cal_fab,fab_text,calendar_day_calcul_classes);
         recyclerView.setAdapter(calender_adapter);
 
         setSupportActionBar(toolbar);
@@ -84,10 +84,10 @@ NavigationView navigationView;
                   //  week++;
                 if(i==1){
                     //   vh.number_text[week - 2].setText("5."+i + "");
-                    date[week - 2]="5."+i;
+                    date[week - 1]="5."+i;
                 }else {
                     //  vh.number_text[week - 2].setText(i + "");
-                    date[week - 2]=i+"";
+                    date[week - 1]=i+"";
 
                 }
 
