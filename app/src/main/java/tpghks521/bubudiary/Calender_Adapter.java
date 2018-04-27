@@ -1,10 +1,12 @@
 package tpghks521.bubudiary;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import android.graphics.Color;
 
+import android.icu.util.Calendar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 
@@ -29,6 +31,8 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     FloatingActionButton cal_fab;
     TextView fab_text;
     ViewGroup parent;
+
+    int position;
     public Calender_Adapter(Context context,View floating_view,FloatingActionButton cal_fab,TextView fab_text) {
         this.context = context;
             this.floating_view=floating_view;
@@ -45,11 +49,12 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
 
         return holder;
-    }
+    }//onCreateViewHolder
 
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+       this.position=position;
         vh = (VH) holder;
         for (int i = 0; i < 35; i++) {
             vh.number_text[i].setTextSize(15);
@@ -60,26 +65,29 @@ public class Calender_Adapter extends RecyclerView.Adapter {
             } else {
                 vh.number_text[i].setTextColor(Color.BLACK);
             }
-        }
+        }//for (int i = 0; i < 35; i++)
         for (int i = 0; i < 4 * 7 * 5; i++) {
             vh.text_list[i].setText("");
-        }
+        }//for (int i = 0; i < 4 * 7 * 5; i++)
 
 
 
-    }
+    }//onBindViewHolder
 
 
 
 
+
+    //-------------------------------------------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------------------------------------------
     @Override
     public int getItemCount() {
         return 2;
-    }
+    }//getItemCount
 
-
-
-    
     class VH extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {
 
         //멤버변수
@@ -154,7 +162,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
                         cal_actionButtons[((clicknum)*3)+b].setVisibility(View.VISIBLE);
                     }
 
-                }
+                }//if(number_cal_layout[i]==view)
 
                 floating_view.setVisibility(View.VISIBLE);
                 floating_view_below.setVisibility(View.VISIBLE);
@@ -178,7 +186,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
                 fab_text.setText("");
 
 
-            }
+            }//for(int i = 0; i < 35; i++)
 
             floating_view_below.setOnClickListener(new View.OnClickListener() {
 
@@ -209,14 +217,23 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
                     }
                     //------------------------------------------------------------------------------------------------------------------------------------
-                }
-            });
+                }//onClick(View view)
+            });// floating_view_below.setOnClickListener(new View.OnClickListener()
 
 
 
             Toast.makeText(context, view.getId()+"", Toast.LENGTH_SHORT).show();
             return true;
-        }
+        }//longclick
 
-    }
-}
+
+
+
+
+
+
+
+
+
+    }//class VH
+}// class Calender_Adapter
