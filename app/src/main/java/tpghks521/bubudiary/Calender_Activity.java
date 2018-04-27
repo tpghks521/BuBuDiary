@@ -2,23 +2,19 @@ package tpghks521.bubudiary;
 
 
 import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
+
 import android.icu.util.Calendar;
 
-import android.os.Build;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.NumberPicker;
-import android.widget.Toast;
+
 
 
 

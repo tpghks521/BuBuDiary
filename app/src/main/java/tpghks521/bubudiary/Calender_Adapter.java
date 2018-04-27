@@ -1,27 +1,21 @@
 package tpghks521.bubudiary;
 
-import android.annotation.SuppressLint;
+
 import android.content.Context;
-import android.content.res.Resources;
+
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.os.Build;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
+
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
-import android.util.LayoutDirection;
-import android.util.Xml;
-import android.view.Gravity;
+
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.xmlpull.v1.XmlPullParser;
+
 
 /**
  * Created by tpghk on 2018-04-23.
@@ -72,7 +66,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     }
 
 
-    CoordinatorLayout.LayoutParams params;
+
 
     @Override
     public int getItemCount() {
@@ -88,8 +82,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         TextView[] number_text = new TextView[35];
         TextView[] text_list = new TextView[4 * 7 * 5];
         LinearLayout[] number_cal_layout =new LinearLayout[35];
-        FloatingActionButton floatingActionButton;
-CoordinatorLayout coordinatorLayout;
+
 
         public VH(View itemView,Context context) {
              super(itemView);
@@ -116,68 +109,7 @@ CoordinatorLayout coordinatorLayout;
 
             }
 
-            floatingActionButton = new FloatingActionButton(context);
 
-
-
-
-            floatingActionButton.setImageResource(R.drawable.ic_action_palne);
-
-
-
-
-            params=new CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.WRAP_CONTENT,CoordinatorLayout.LayoutParams.WRAP_CONTENT);
-
-            params.setAnchorId(number_cal_layout[5].getId());
-            params.anchorGravity = Gravity.BOTTOM;
-
-
-            floatingActionButton.setLayoutParams(params);
-            floatingActionButton.setSize(FloatingActionButton.SIZE_MINI);
-            floatingActionButton.setBackgroundColor(Color.WHITE);
-            floatingActionButton.setColorFilter(Color.WHITE);
-           
-
-            coordinatorLayout=itemView.findViewById(R.id.coordinator);
-
-
-
-            coordinatorLayout.addView(floatingActionButton);
-
-
-
-//            floatingActionButton.setVisibility(View.VISIBLE);
-//            floatingActionButton.show();
-
-
-
-
-
-
-//                for (int i = 0; i < 3; i++) {
-//
-//
-//                    floatingActionButtons[i] = itemView.findViewById(R.id.fab01_activity_addPlan + i);
-//                    params = (CoordinatorLayout.LayoutParams) floatingActionButtons[i].getLayoutParams();
-//
-//
-//                    params.setAnchorId(number_cal_layout[0].getId());
-//
-//
-//                    if (i == 1) {
-//                        params.anchorGravity = Gravity.BOTTOM;
-//                    } else if (i == 2) {
-//                        params.anchorGravity = Gravity.TOP;
-//                    } else {
-//                        params.anchorGravity = Gravity.CENTER_VERTICAL;
-//                    }
-//
-//                    floatingActionButtons[i].setLayoutParams(params);
-//                    floatingActionButtons[i].setImageResource(R.drawable.ic_action_palne + i);
-//                    floatingActionButtons[i].setVisibility(View.VISIBLE);
-//                    floatingActionButtons[i].setBackgroundColor(Color.WHITE);
-//
-//                }
 
 
         }
