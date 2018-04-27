@@ -76,7 +76,7 @@ NavigationView navigationView;
             for (int i = 1; i < week; i++) {
                 System.out.println("  ");
                 // vh.number_text[i-1].setText(" ");
-                date[i-1]=" ";
+                date[i-1]="a";
             }
             for (int i = 1; i <= lastOfDate; i++) {
 //                System.out.print((i < 10) ? "  " + i : "  " + i);
@@ -84,10 +84,10 @@ NavigationView navigationView;
                   //  week++;
                 if(i==1){
                     //   vh.number_text[week - 2].setText("5."+i + "");
-                    date[week - 1]="5."+i;
+                    date[week]="5."+i;
                 }else {
                     //  vh.number_text[week - 2].setText(i + "");
-                    date[week - 1]=i+"";
+                    date[week]=i+"b";
 
                 }
 
@@ -101,7 +101,12 @@ NavigationView navigationView;
             String years_string=years+"";
             String month=k+"";
             calendar_day_calcul_classes.add(new Calendar_Day_calcul_class(years_string,month,date));
-
+            System.out.println(years);
+            System.out.println(month);
+            for(int i=0;i<date.length;i++) {
+                System.out.print(date[i]+" , ");
+            }
+            System.out.println("");
         }
 
 
