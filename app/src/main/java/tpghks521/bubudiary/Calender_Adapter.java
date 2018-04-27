@@ -5,6 +5,7 @@ import android.content.Context;
 
 import android.graphics.Color;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -25,9 +26,13 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     Context context;
     VH vh;
     View floating_view;
-    public Calender_Adapter(Context context,View floating_view) {
+    FloatingActionButton cal_fab;
+    TextView fab_text;
+    public Calender_Adapter(Context context,View floating_view,FloatingActionButton cal_fab,TextView fab_text) {
         this.context = context;
             this.floating_view=floating_view;
+            this.cal_fab=cal_fab;
+            this.fab_text=fab_text;
     }
 
     @Override
@@ -79,9 +84,24 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     class VH extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {
 
         //멤버변수
+        View floating_view_below;
         TextView[] number_text = new TextView[35];
         TextView[] text_list = new TextView[4 * 7 * 5];
         LinearLayout[] number_cal_layout =new LinearLayout[35];
+
+        int cal_actionButtons_count=3*7*5;
+        FloatingActionButton[] cal_actionButtons = new FloatingActionButton[cal_actionButtons_count];
+
+
+
+
+
+
+
+
+
+
+
 
 
         public VH(View itemView,Context context) {
@@ -108,9 +128,12 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
 
             }
+            for(int i= 0 ; i<cal_actionButtons_count;i++) {
+                cal_actionButtons[i] = itemView.findViewById(R.id.v_cal_01_fab01_activity_addPlan + i);
+            }
 
 
-
+            floating_view_below=itemView.findViewById(R.id.floating_view_below);
 
         }
 
@@ -127,20 +150,33 @@ public class Calender_Adapter extends RecyclerView.Adapter {
                 if(number_cal_layout[i]==view){
                     clicknum=i;
                     number_text[clicknum].setBackgroundColor(Color.GREEN);
+
+                    for(int b= 0 ; b<3;b++) {
+                        cal_actionButtons[((clicknum)*3)+b].setVisibility(View.VISIBLE);
+                    }
+
                 }
 
                 floating_view.setVisibility(View.VISIBLE);
-
-
+                floating_view_below.setVisibility(View.VISIBLE);
+                cal_fab.setVisibility(View.GONE);
+                fab_text.setText("");
 
 
             }
 
-            floating_view.setOnClickListener(new View.OnClickListener() {
+            floating_view_below.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    cal_fab.setVisibility(View.VISIBLE);
+                    fab_text.setText("오늘");
                     floating_view.setVisibility(View.GONE);
                     number_text[clicknum].setBackgroundColor(Color.WHITE);
+                    floating_view_below.setVisibility(View.GONE);
+                    for(int i= 0 ; i<cal_actionButtons_count;i++) {
+                        cal_actionButtons[i].setVisibility(View.GONE);
+                    }
+
                 }
             });
 

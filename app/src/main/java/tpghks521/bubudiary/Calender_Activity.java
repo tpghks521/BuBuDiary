@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 
 import android.icu.util.Calendar;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 
@@ -14,8 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.view.View;
-
-
+import android.widget.TextView;
 
 
 public class Calender_Activity extends AppCompatActivity {
@@ -24,6 +24,9 @@ NavigationView navigationView;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
  View floating_view;
+
+    FloatingActionButton cal_fab;
+    TextView fab_text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +34,13 @@ NavigationView navigationView;
 
         saveYear();
         floating_view=findViewById(R.id.floating_view);
-
+        cal_fab=findViewById(R.id.cal_fab);
+        fab_text=findViewById(R.id.fab_text);
         toolbar=findViewById(R.id.toolbar);
         navigationView=findViewById(R.id.cal_navi);
         RecyclerView recyclerView = findViewById(R.id.cal_recyclerview);
-        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view);
+
+        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view,cal_fab,fab_text);
         recyclerView.setAdapter(calender_adapter);
 
         setSupportActionBar(toolbar);
