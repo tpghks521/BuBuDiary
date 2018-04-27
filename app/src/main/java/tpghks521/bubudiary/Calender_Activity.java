@@ -65,35 +65,39 @@ NavigationView navigationView;
     }//saveYear
 
     void cal(int years) {
-        String[] date = new String[35];
+        String[] date;
         java.util.Calendar c = java.util.Calendar.getInstance();
 
         for (int k = 1; k <= 12; k++) {
-            c.set(years, k-1, 1);
+            date = new String[35];
+            c.set(2018, k-1, 1);
             @SuppressLint("WrongConstant") int lastOfDate = c.getActualMaximum(Calendar.DATE);
             @SuppressLint("WrongConstant") int week = c.get(Calendar.DAY_OF_WEEK);
 
-            for (int i = 1; i < week; i++) {
-                System.out.println("  ");
-                // vh.number_text[i-1].setText(" ");
-                date[i-1]="a";
+            for (int i = 0; i < week-1; i++) {
+                System.out.println(lastOfDate);
+                System.out.println(week);
+                date[i]=" ";
             }
+
             for (int i = 1; i <= lastOfDate; i++) {
-//                System.out.print((i < 10) ? "  " + i : "  " + i);
-//                if (week % 7 == 0) System.out.println();
-                  //  week++;
-                if(i==1){
+
+                if(week-1+i>35){
+                    date[week-1+i-8]=i-7+ " / "+i;
+                }
+
+                else if(i==1){
                     //   vh.number_text[week - 2].setText("5."+i + "");
-                    date[week]="5."+i;
+                    date[week-2+i]=k+"."+i;
                 }else {
                     //  vh.number_text[week - 2].setText(i + "");
-                    date[week]=i+"b";
+                    date[week-2+i]=i+"";
 
                 }
 
             }
 
-            for(int i =lastOfDate;i<34;i++){
+            for(int i =lastOfDate+week;i<34;i++){
                 //vh.number_text[i+1].setText(" ");
                 date[i+1]=" ";
             }
@@ -101,13 +105,17 @@ NavigationView navigationView;
             String years_string=years+"";
             String month=k+"";
             calendar_day_calcul_classes.add(new Calendar_Day_calcul_class(years_string,month,date));
+
             System.out.println(years);
             System.out.println(month);
             for(int i=0;i<date.length;i++) {
                 System.out.print(date[i]+" , ");
             }
             System.out.println("");
+
+
         }
+        System.out.println(calendar_day_calcul_classes.size());
 
 
 

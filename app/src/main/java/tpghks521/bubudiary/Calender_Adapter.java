@@ -76,11 +76,10 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
         }//for (int i = 0; i < 4 * 7 * 5; i++)
 
-        int datenum=  calendar_day_calcul_classes.get(position).date.length;
 
 
-        for(int i = 0;i<datenum-1;i++){
-          vh.number_text[i].setText( calendar_day_calcul_classes.get(position).date[i]);
+        for(int i = 0;i<35;i++){
+          vh.number_text[i].setText(calendar_day_calcul_classes.get(position).date[i]);
 
         }
 
