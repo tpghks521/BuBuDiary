@@ -28,6 +28,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     View floating_view;
     FloatingActionButton cal_fab;
     TextView fab_text;
+    ViewGroup parent;
     public Calender_Adapter(Context context,View floating_view,FloatingActionButton cal_fab,TextView fab_text) {
         this.context = context;
             this.floating_view=floating_view;
@@ -40,7 +41,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         LayoutInflater inflater = LayoutInflater.from(context);
         View itemView = inflater.inflate(R.layout.item_calender_recycler, parent, false);
         VH holder = new VH(itemView,context);
-
+        this.parent=parent;
 
 
         return holder;
@@ -62,8 +63,6 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         }
         for (int i = 0; i < 4 * 7 * 5; i++) {
             vh.text_list[i].setText("");
-
-
         }
 
 
@@ -159,6 +158,22 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
                 floating_view.setVisibility(View.VISIBLE);
                 floating_view_below.setVisibility(View.VISIBLE);
+
+
+               //------------------------------------------------------------------------------------------------------------------------------------
+                try {
+                    if (parent.getChildAt(getLayoutPosition() - 1).findViewById(R.id.floating_view_below) != null) {
+                        parent.getChildAt(getLayoutPosition() - 1).findViewById(R.id.floating_view_below).setVisibility(View.VISIBLE);
+                    }
+                }catch (Exception e){
+                }
+                 try {
+                   if (parent.getChildAt(getLayoutPosition() + 1).findViewById(R.id.floating_view_below) != null) {
+                         parent.getChildAt(getLayoutPosition() + 1).findViewById(R.id.floating_view_below).setVisibility(View.VISIBLE);
+                     }
+                 }catch (Exception e){
+                 }
+                //------------------------------------------------------------------------------------------------------------------------------------
                 cal_fab.setVisibility(View.GONE);
                 fab_text.setText("");
 
@@ -166,6 +181,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
             }
 
             floating_view_below.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
                     cal_fab.setVisibility(View.VISIBLE);
@@ -176,7 +192,23 @@ public class Calender_Adapter extends RecyclerView.Adapter {
                     for(int i= 0 ; i<cal_actionButtons_count;i++) {
                         cal_actionButtons[i].setVisibility(View.GONE);
                     }
+                    //------------------------------------------------------------------------------------------------------------------------------------
+                    try {
+                        if (parent.getChildAt(getLayoutPosition() - 1).findViewById(R.id.floating_view_below) != null) {
+                            parent.getChildAt(getLayoutPosition() - 1).findViewById(R.id.floating_view_below).setVisibility(View.GONE);
+                        }
+                    }catch (Exception e){
 
+                    }
+
+                    try {
+                        if (parent.getChildAt(getLayoutPosition() + 1).findViewById(R.id.floating_view_below) != null) {
+                            parent.getChildAt(getLayoutPosition() + 1).findViewById(R.id.floating_view_below).setVisibility(View.GONE);
+                        }
+                    }catch (Exception e){
+
+                    }
+                    //------------------------------------------------------------------------------------------------------------------------------------
                 }
             });
 
