@@ -21,32 +21,46 @@ import java.util.ArrayList;
 
 
 public class Calender_Activity extends AppCompatActivity {
-NavigationView navigationView;
-
+    NavigationView navigationView;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
- View floating_view;
-
     FloatingActionButton cal_fab;
     TextView fab_text;
-
     ArrayList<Calendar_Day_calcul_class> calendar_day_calcul_classes= new ArrayList<>();
+
+    FloatingActionButton[] floatingActionButtons=new FloatingActionButton[3];
+    View floating_view;
+
+    TextView[] floatingActionButtons_text=new TextView[4];
+
+
     int[] year= new int[150];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
-
-
-        floating_view=findViewById(R.id.floating_view);
         cal_fab=findViewById(R.id.cal_fab);
         fab_text=findViewById(R.id.fab_text);
         toolbar=findViewById(R.id.toolbar);
         navigationView=findViewById(R.id.cal_navi);
         RecyclerView recyclerView = findViewById(R.id.cal_recyclerview);
-       // saveYear();
+        floating_view=findViewById(R.id.floating_view);
+        floatingActionButtons[0]=findViewById(R.id.FloatingActionButton_add);
+        floatingActionButtons[1]=findViewById(R.id.FloatingActionButton_wallet);
+        floatingActionButtons[2]=findViewById(R.id.FloatingActionButton_weather);
+        floatingActionButtons_text[0]=findViewById(R.id.FloatingActionButton_add_text);
+        floatingActionButtons_text[1]=findViewById(R.id.FloatingActionButton_wallet_text);
+        floatingActionButtons_text[2]=findViewById(R.id.FloatingActionButton_weather_text);
+        floatingActionButtons_text[3]=findViewById(R.id.flb_set_date);
+
+        // saveYear();
+
+
+
+
+
         cal(2018);
-        Calender_Adapter calender_adapter = new Calender_Adapter(this,floating_view,cal_fab,fab_text,calendar_day_calcul_classes);
+        Calender_Adapter calender_adapter = new Calender_Adapter(this,cal_fab,fab_text,calendar_day_calcul_classes,floatingActionButtons,floating_view,floatingActionButtons_text);
         recyclerView.setAdapter(calender_adapter);
 
         setSupportActionBar(toolbar);
