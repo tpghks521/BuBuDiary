@@ -34,6 +34,9 @@ public class Calender_Activity extends AppCompatActivity {
     TextView[] floatingActionButtons_text=new TextView[4];
 
 
+    TextView actionbar_year;
+    static int actionbar_year_number=2018;
+
     int[] year= new int[150];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +56,18 @@ public class Calender_Activity extends AppCompatActivity {
         floatingActionButtons_text[2]=findViewById(R.id.FloatingActionButton_weather_text);
         floatingActionButtons_text[3]=findViewById(R.id.flb_set_date);
 
-        // saveYear();
+        cal(actionbar_year_number);
 
 
 
+        actionbar_year=findViewById(R.id.actionbar_year);
+        actionbar_year.setText(actionbar_year_number+"");
 
 
-        cal(2018);
-        Calender_Adapter calender_adapter = new Calender_Adapter(this,cal_fab,fab_text,calendar_day_calcul_classes,floatingActionButtons,floating_view,floatingActionButtons_text);
+        Calender_Adapter calender_adapter = new Calender_Adapter(this, cal_fab, fab_text, calendar_day_calcul_classes, floatingActionButtons, floating_view, floatingActionButtons_text);
+
+
+
         recyclerView.setAdapter(calender_adapter);
 
         setSupportActionBar(toolbar);
@@ -68,15 +75,16 @@ public class Calender_Activity extends AppCompatActivity {
 
         //-------------------------------------------------------------------------------
 
+
+
+
     }
-    void saveYear(){
-        for(int i=0;i<year.length;i++){
-            year[i]=1900+i;
-            cal(year[i]);
-        }
 
 
-    }//saveYear
+
+
+
+
 
     void cal(int years) {
         String[] date;
@@ -120,19 +128,8 @@ public class Calender_Activity extends AppCompatActivity {
             String month=k+"";
             calendar_day_calcul_classes.add(new Calendar_Day_calcul_class(years_string,month,date));
 
-            System.out.println(years);
-            System.out.println(month);
-            for(int i=0;i<date.length;i++) {
-                System.out.print(date[i]+" , ");
-            }
-            System.out.println("");
-
 
         }
-        System.out.println(calendar_day_calcul_classes.size());
-
-
-
 
 //        for( int k =1; k<12; k++){
 //            c.set(2018,5,1);

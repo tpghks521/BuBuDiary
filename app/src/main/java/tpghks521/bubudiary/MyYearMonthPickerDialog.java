@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -22,7 +23,7 @@ public class MyYearMonthPickerDialog extends DialogFragment {
     private static final int MAX_YEAR = 2045;
     private static final int MIN_YEAR = 1900;
 
-    private DatePickerDialog.OnDateSetListener listener;
+     DatePickerDialog.OnDateSetListener listener;
     public Calendar cal = Calendar.getInstance();
     @NonNull
     @Override
@@ -58,7 +59,7 @@ public class MyYearMonthPickerDialog extends DialogFragment {
         monthPicker.setMaxValue(12);
         monthPicker.setValue(cal.get(Calendar.MONTH) + 1);
 
-        int year = cal.get(Calendar.YEAR);
+        final int year = cal.get(Calendar.YEAR);
         yearPicker.setMinValue(MIN_YEAR);
         yearPicker.setMaxValue(MAX_YEAR);
         yearPicker.setValue(year);
@@ -69,7 +70,15 @@ public class MyYearMonthPickerDialog extends DialogFragment {
         .setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-              //  listener.onDateSet(null, yearPicker.getValue(), monthPicker.getValue(), 0);
+                listener.onDateSet(null, yearPicker.getValue(), monthPicker.getValue(), 0);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                new Calender_Activity().cal(yearPicker.getValue());
+
+            }
+        });
+
             }
         })
         .setNegativeButton("취소", new DialogInterface.OnClickListener() {
