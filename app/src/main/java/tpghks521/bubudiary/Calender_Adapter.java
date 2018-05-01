@@ -173,6 +173,9 @@ public class Calender_Adapter extends RecyclerView.Adapter {
        View.OnClickListener onClickListener = new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+            for(int i=0;i<12;i++) {
+//                parent.getChildAt(i).get
+            }
                for(int i = 0; i < 35; i++){
 
                        clicknum=i;
