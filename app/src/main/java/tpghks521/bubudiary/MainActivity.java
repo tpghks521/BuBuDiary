@@ -24,6 +24,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
 
+
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener{
 
@@ -62,7 +63,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 //if(account!=null) {
 //    Intent intent = new Intent(this, Calender_Activity.class);
 //    startActivity(intent);
+//
 //}
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
