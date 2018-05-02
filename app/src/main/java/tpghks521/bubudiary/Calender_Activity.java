@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 
 import android.icu.util.Calendar;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +16,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 
 import java.util.ArrayList;
 
@@ -37,11 +43,20 @@ public class Calender_Activity extends AppCompatActivity {
     TextView actionbar_year;
     static int actionbar_year_number=2018;
 
+
+    Button sign_out;
+
+
     int[] year= new int[150];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+
+
+
+
+
         cal_fab=findViewById(R.id.cal_fab);
         fab_text=findViewById(R.id.fab_text);
         toolbar=findViewById(R.id.toolbar);
@@ -74,7 +89,6 @@ public class Calender_Activity extends AppCompatActivity {
         drawerLayout=findViewById(R.id.drawerlayout);
 
         //-------------------------------------------------------------------------------
-
 
 
 
@@ -169,4 +183,6 @@ public class Calender_Activity extends AppCompatActivity {
         pd.show(getSupportFragmentManager(),"test");
 
    }
+
+
 }

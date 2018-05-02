@@ -59,6 +59,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     }//onCreateViewHolder
 
 
+
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
@@ -87,7 +88,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         }
 
 
-
+        floating_view.setOnClickListener(onClickListener);
 
 
 
@@ -95,7 +96,26 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     }//onBindViewHolder
 
 
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            for(int i = 0; i < 35; i++){
 
+                vh.number_text[i].setBackgroundColor(Color.WHITE);
+                System.out.println(i);
+            }//if(number_cal_layout[i]==view)
+
+
+            for(int i=0;i<floatingActionButtons.length;i++) {
+                floatingActionButtons[i].setVisibility(View.GONE);
+                floatingActionButtons_text[i].setVisibility(View.GONE);
+            }
+            flb_set_date.setVisibility(View.GONE);
+            cal_fab.setVisibility(View.VISIBLE);
+            fab_text.setText("오늘");
+            floating_view.setVisibility(View.GONE);
+        }
+    };
 
     @Override
     public int getItemCount() {
@@ -138,7 +158,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
             }
 
-            floating_view.setOnClickListener(onClickListener);
+
 
         }
 
@@ -167,31 +187,14 @@ public class Calender_Adapter extends RecyclerView.Adapter {
             }
             flb_set_date.setVisibility(View.VISIBLE);
 
+
+
+
+
             return true;
         }//longclick
 
-       View.OnClickListener onClickListener = new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-            for(int i=0;i<12;i++) {
-//                parent.getChildAt(i).get
-            }
-               for(int i = 0; i < 35; i++){
 
-                       clicknum=i;
-                       number_text[clicknum].setBackgroundColor(Color.WHITE);
-
-               }//for(int i = 0; i < 35; i++)
-               for(int i=0;i<floatingActionButtons.length;i++) {
-                   floatingActionButtons[i].setVisibility(View.GONE);
-                   floatingActionButtons_text[i].setVisibility(View.GONE);
-               }
-               flb_set_date.setVisibility(View.GONE);
-               cal_fab.setVisibility(View.VISIBLE);
-               fab_text.setText("오늘");
-               floating_view.setVisibility(View.GONE);
-           }
-       };
 
 
 

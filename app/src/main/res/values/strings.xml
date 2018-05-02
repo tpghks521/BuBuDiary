@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BuBuDiary</string>
+
+
+    <!-- Button labels -->
+    <string name="sign_out">Sign Out</string>
+    <string name="server_client_id">358018408980-4po6k931e8t331npv19f1phqma5g17t0.apps.googleusercontent.com</string>
+
 </resources>

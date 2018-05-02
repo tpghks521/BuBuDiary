@@ -13,6 +13,14 @@
     android:src="@mipmap/ic_my_login"
     />
 
+    <Button
+        android:id="@+id/sign_out_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_out"
+android:onClick="logout"
+        />
+
 
 
 </LinearLayout>
