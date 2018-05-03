@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 
 public class MyYearMonthPickerDialog extends DialogFragment {
-    AlertDialog dialog;
+
     private static final int MAX_YEAR = 2045;
     private static final int MIN_YEAR = 1900;
 
