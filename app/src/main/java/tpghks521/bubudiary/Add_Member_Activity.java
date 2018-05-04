@@ -46,32 +46,7 @@ public class Add_Member_Activity extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-
-                String serverUrl="http://tpghks521.dothome.co.kr/android/BuBudaiary_DB.php";
-               // String serverUrl="http://tpghks521.dothome.co.kr/android/aaa.php";
-                SimpleMultiPartRequest multiPartRequest = new SimpleMultiPartRequest(Request.Method.POST, serverUrl, new Response.Listener<String>() {
-
-                    @Override
-                    public void onResponse(String response) {
-                        System.out.println("성공 : "+response);
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.println("연결실패"+error);
-                    }
-                });
-
-
-                multiPartRequest.addStringParam("personEmail",personEmail);
-
-                RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-                requestQueue.add(multiPartRequest);
-
-
-
-
+                new DBclass(getContext()).uploadDB(personEmail);
                 Intent intent = new Intent(getContext(), Calender_Activity.class);
                 intent.putExtra("personEmail",personEmail);
                startActivity(intent);
