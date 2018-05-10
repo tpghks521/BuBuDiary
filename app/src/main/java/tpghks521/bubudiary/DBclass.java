@@ -1,7 +1,9 @@
 package tpghks521.bubudiary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -18,10 +20,13 @@ import com.android.volley.toolbox.Volley;
 public class DBclass {
 
     Context context;
+    String personEmail;
+    FragmentManager fragmentManager;
 
-    TextView email_id;
     public DBclass(Context context) {
         this.context=context;
+
+
     }
 
 boolean check_id;
@@ -53,7 +58,8 @@ void uploadDB(String personEmail){
 
 }//uploadDB
 
-    boolean loadDB(String personEmail){
+    boolean loadDB(final String personEmail, final FragmentManager fragmentManager){
+        this.fragmentManager=fragmentManager;
 
         String serverUrl="http://tpghks521.dothome.co.kr/android/DuDudaiary_DB_load.php";
         SimpleMultiPartRequest multiPartRequest_load = new SimpleMultiPartRequest(Request.Method.POST, serverUrl, new Response.Listener<String>() {
@@ -61,11 +67,25 @@ void uploadDB(String personEmail){
                             public void onResponse(String response) {
 
                                 if(response.equals("yes")) {
-                                    check_id=true;
-                                }else if(response.equals("no")) {
-                                    check_id = false;
-                                }
+                                    System.out.println("된다");
 
+
+                                    Intent intent = new Intent(context,Calender_Activity.class);
+                                    context.startActivity(intent);
+
+
+                                }else if(response.equals("no")) {
+                                    System.out.println("없다");
+                                   Bundle args = new Bundle();
+                                   args.putString("personEmail",personEmail);
+
+                                   Add_Member_Activity ama = new Add_Member_Activity();
+                                  ama.setArguments(args);
+                                  ama.show(fragmentManager,"test");
+
+
+
+                                }
 
                             }
                         }, new Response.ErrorListener() {
