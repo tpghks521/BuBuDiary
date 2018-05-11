@@ -22,6 +22,8 @@ import com.android.volley.error.VolleyError;
 import com.android.volley.request.SimpleMultiPartRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.w3c.dom.Text;
+
 public class Add_Member_Activity extends DialogFragment {
     String personEmail;
     TextView email_id;
@@ -49,7 +51,7 @@ public class Add_Member_Activity extends DialogFragment {
                 new DBclass(getContext()).uploadDB(personEmail);
                 Intent intent = new Intent(getContext(), Calender_Activity.class);
                 intent.putExtra("personEmail",personEmail);
-               startActivity(intent);
+                startActivity(intent);
 
 
 

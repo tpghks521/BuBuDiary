@@ -1,29 +1,20 @@
 package tpghks521.bubudiary;
 
 
-import android.annotation.SuppressLint;
 
-import android.icu.util.Calendar;
-
-import android.support.annotation.NonNull;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-
-import java.util.ArrayList;
 
 
 public class Calender_Activity extends AppCompatActivity {
@@ -32,36 +23,35 @@ public class Calender_Activity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     FloatingActionButton cal_fab;
     TextView fab_text;
-    ArrayList<Calendar_Day_calcul_class> calendar_day_calcul_classes= new ArrayList<>();
-
     FloatingActionButton[] floatingActionButtons=new FloatingActionButton[3];
     View floating_view;
-
     TextView[] floatingActionButtons_text=new TextView[4];
 
 
-    TextView actionbar_year;
-    static int actionbar_year_number=2018;
+   public static TextView actionbar_year;
+   public static int actionbar_year_number=2018;
+   public static LinearLayoutManager linearLayoutManager;
+   public static TextView month;
+   public static  Calender_Adapter calender_adapter;
 
 
-    Button sign_out;
+   RecyclerView recyclerView;
+    int month_position;
+    ImageView actionbar_allow_down;
 
 
-    int[] year= new int[150];
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
 
-
-
-
-        cal_fab=findViewById(R.id.cal_fab);
+//------------------------------------------------------------------------------------------------------------
+            cal_fab=findViewById(R.id.cal_fab);
         fab_text=findViewById(R.id.fab_text);
         toolbar=findViewById(R.id.toolbar);
         navigationView=findViewById(R.id.cal_navi);
-        RecyclerView recyclerView = findViewById(R.id.cal_recyclerview);
+        recyclerView = findViewById(R.id.cal_recyclerview);
         floating_view=findViewById(R.id.floating_view);
         floatingActionButtons[0]=findViewById(R.id.FloatingActionButton_add);
         floatingActionButtons[1]=findViewById(R.id.FloatingActionButton_wallet);
@@ -71,118 +61,85 @@ public class Calender_Activity extends AppCompatActivity {
         floatingActionButtons_text[2]=findViewById(R.id.FloatingActionButton_weather_text);
         floatingActionButtons_text[3]=findViewById(R.id.flb_set_date);
 
-        cal(actionbar_year_number);
 
+//------------------------------------------------------------------------------------------------------------
 
-
+        new Calendaer_calcul_year().cal(actionbar_year_number,calender_adapter);
         actionbar_year=findViewById(R.id.actionbar_year);
         actionbar_year.setText(actionbar_year_number+"");
-
-
-        Calender_Adapter calender_adapter = new Calender_Adapter(this, cal_fab, fab_text, calendar_day_calcul_classes, floatingActionButtons, floating_view, floatingActionButtons_text);
-
-
-
+        month=findViewById(R.id.month_select);
+        calender_adapter = new Calender_Adapter(this, cal_fab, fab_text, Calendaer_calcul_year.calendar_day_calcul_classes, floatingActionButtons, floating_view, floatingActionButtons_text);
         recyclerView.setAdapter(calender_adapter);
+//------------------------------------------------------------------------------------------------------------
+
 
         setSupportActionBar(toolbar);
         drawerLayout=findViewById(R.id.drawerlayout);
-
-        //-------------------------------------------------------------------------------
-
-
-
-    }
-
+        recyclerView.addOnScrollListener(onScrollListener);
+        linearLayoutManager=(LinearLayoutManager) recyclerView.getLayoutManager();
+        month_position= 5;
+        linearLayoutManager.scrollToPosition(4);
+//------------------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-    void cal(int years) {
-        String[] date;
-        java.util.Calendar c = java.util.Calendar.getInstance();
-
-        for (int k = 1; k <= 12; k++) {
-            date = new String[35];
-            c.set(2018, k-1, 1);
-            @SuppressLint("WrongConstant") int lastOfDate = c.getActualMaximum(Calendar.DATE);
-            @SuppressLint("WrongConstant") int week = c.get(Calendar.DAY_OF_WEEK);
-
-            for (int i = 0; i < week-1; i++) {
-                System.out.println(lastOfDate);
-                System.out.println(week);
-                date[i]=" ";
-            }
-
-            for (int i = 1; i <= lastOfDate; i++) {
-
-                if(week-1+i>35){
-                    date[week-1+i-8]=i-7+ " / "+i;
-                }
-
-                else if(i==1){
-                    //   vh.number_text[week - 2].setText("5."+i + "");
-                    date[week-2+i]=k+"."+i;
-                }else {
-                    //  vh.number_text[week - 2].setText(i + "");
-                    date[week-2+i]=i+"";
-
-                }
-
-            }
-
-            for(int i =lastOfDate+week;i<34;i++){
-                //vh.number_text[i+1].setText(" ");
-                date[i+1]=" ";
-            }
-            //  System.out.println("\n=====================================");
-            String years_string=years+"";
-            String month=k+"";
-            calendar_day_calcul_classes.add(new Calendar_Day_calcul_class(years_string,month,date));
-
-
+        if(month_position<10) {
+            month.setText("0"+month_position + "");
+        }else if(month_position>10){
+            month.setText(month_position + "");
         }
 
-//        for( int k =1; k<12; k++){
-//            c.set(2018,5,1);
-//            @SuppressLint("WrongConstant") int lastOfDate = c.getActualMaximum(Calendar.DATE);
-//            @SuppressLint("WrongConstant") int week = c.get(Calendar.DAY_OF_WEEK);
-//            for(int i = 1; i<week; i++){
-//
-//            }
-//
-//
-//        }
+//------------------------------------------------------------------------------------------------------------
+
+        //제스처리스너를 달아서 플리핑을 햇을때 다음 아이템을 포지션시키면된다.
+        actionbar_allow_down=findViewById(R.id.actionbar_allow_down);
+        actionbar_allow_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyYearMonthPickerDialog pd = new MyYearMonthPickerDialog();
 
 
+                Bundle args = new Bundle();
+                args.putInt("year",actionbar_year_number);
 
-    }//cal
+                pd.setArguments(args);
+                pd.show(getSupportFragmentManager(),"test");
+            }
+        });
+//------------------------------------------------------------------------------------------------------------
 
+    }//oncreate
 
+//------------------------------------------------------------------------------------------------------------
 
+    RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
 
+            if(month_position!=linearLayoutManager.findFirstVisibleItemPosition()+1){
 
-
-
-
-
-
+                month_position=linearLayoutManager.findFirstVisibleItemPosition()+1;
+                if(month_position<10) {
+                    month.setText("0"+month_position + "");
+                }else if(month_position>=10){
+                    month.setText(month_position + "");
+                }
+            }//if
+        }//onScrollStateChanged
+    };
+//------------------------------------------------------------------------------------------------------------
     public void click_actionbar_menu(View view) {
 
         drawerLayout.openDrawer(navigationView);
 
+    }//click_actionbar_menu
 
+//------------------------------------------------------------------------------------------------------------
+
+
+    public void click_add(View view) {
+        Intent intent = new Intent(this,Add_Plan_Activity.class);
+        startActivity(intent);
     }
 
-    public void click_Selcet_Date(View view) {
-
-        MyYearMonthPickerDialog pd = new MyYearMonthPickerDialog();
-
-        pd.show(getSupportFragmentManager(),"test");
-
-   }
-
-
-}
+}//class

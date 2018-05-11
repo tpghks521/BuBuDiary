@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tpghks521.bubudiary.Add_Plan_Activity">
+
+
+    <android.support.design.widget.AppBarLayout
+
+        android:background="#0097a7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/add_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/add_back_img"
+                    />
+
+                <TextView
+                    android:text="일정"
+                    android:textColor="#ffffff"
+                    android:textSize="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <ImageView
+                    android:paddingRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/add_check_img_end"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <EditText
+           android:id="@+id/add_activity_title"
+           android:layout_width="match_parent"
+           android:layout_height="60dp"
+           android:hint="일정을 입력하세요"
+           android:paddingLeft="16dp"
+           android:background="@null"
+           />
+        <TextView
+            android:paddingTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            />
+
+<!--////////////////////////////////////////////////////////////////////////////-->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:paddingTop="8dp"
+        android:id="@+id/addactivity_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018-05-11(금)"
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        />
+    <TextView
+        android:id="@+id/addactivity_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오후 05:10"
+        android:layout_below="@+id/addactivity_date"
+        android:textSize="20sp"
+        android:paddingTop="4dp"
+        android:paddingLeft="16dp"
+        android:paddingBottom="8dp"
+        />
+
+    <ImageView
+        android:id="@+id/add_activity_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_alarm_img"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="16dp"
+        />
+
+</RelativeLayout>
+
+    <TextView
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd"
+        />
+    <!--////////////////////////////////////////////////////////////////////////////-->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/place_img"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_plae_img"/>
+  <EditText
+      android:id="@+id/add_activity_place"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:hint="장소"
+      android:background="@null"
+        android:textSize="20sp"
+      android:layout_toRightOf="@+id/place_img"
+      android:layout_centerVertical="true"
+      />
+
+    <ImageView
+        android:id="@+id/add_search_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_place_search_img"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        android:paddingRight="16dp"
+        />
+
+
+</RelativeLayout>
+
+        <TextView
+            android:paddingTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            />
+
+        <!--////////////////////////////////////////////////////////////////////////////-->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:paddingLeft="8dp"
+        android:id="@+id/add_activity_reapet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_repeat_activity"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반복설정"
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/add_activity_reapet"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_activity_re_img"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>
+
+
+        <TextView
+            android:paddingTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            />
+        <!--////////////////////////////////////////////////////////////////////////////-->
+
+     <RelativeLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <TextView
+             android:id="@+id/repeat_select"
+             android:padding="16dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="완료"
+             android:textSize="25sp"
+             android:paddingLeft="16dp"
+
+             />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@mipmap/add_alarm_off"
+             android:layout_toRightOf="@+id/repeat_select"
+             android:layout_centerVertical="true"
+             />
+
+     </RelativeLayout>
+
+        <TextView
+            android:paddingTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

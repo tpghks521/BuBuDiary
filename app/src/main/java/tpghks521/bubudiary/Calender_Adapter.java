@@ -8,8 +8,11 @@ import android.graphics.Color;
 
 import android.icu.util.Calendar;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 
 import android.view.View;
@@ -38,6 +41,10 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     View floating_view;
     TextView[] floatingActionButtons_text;
     TextView flb_set_date;
+
+
+
+    int dy_num;
     public Calender_Adapter(Context context,FloatingActionButton cal_fab,TextView fab_text,ArrayList<Calendar_Day_calcul_class> calendar_day_calcul_classes, FloatingActionButton[] floatingActionButtons, View floating_view,TextView[] floatingActionButtons_text) {
         this.context = context;
             this.floating_view=floating_view;
@@ -46,6 +53,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
             this.calendar_day_calcul_classes=calendar_day_calcul_classes;
             this.floatingActionButtons=floatingActionButtons;
             this.floatingActionButtons_text=floatingActionButtons_text;
+
         flb_set_date=floatingActionButtons_text[3];
     }
 
@@ -55,8 +63,11 @@ public class Calender_Adapter extends RecyclerView.Adapter {
         View itemView = inflater.inflate(R.layout.item_calender_recycler, parent, false);
         VH holder = new VH(itemView,context);
         this.parent=parent;
+
+
         return holder;
     }//onCreateViewHolder
+
 
 
 
@@ -93,7 +104,12 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
 
 
+
+
+
+
     }//onBindViewHolder
+
 
 
     View.OnClickListener onClickListener = new View.OnClickListener() {

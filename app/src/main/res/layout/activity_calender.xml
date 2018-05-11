@@ -63,6 +63,7 @@
                                 android:textSize="20sp"
                                 />
                             <TextView
+                                android:id="@+id/month_select"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="04"
@@ -90,7 +91,7 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_action_allow_down"
                             android:clickable="true"
-                            android:onClick="click_Selcet_Date"
+
                             />
                         <ImageView
                             android:id="@+id/action_menu"
@@ -109,6 +110,7 @@
                             android:layout_centerVertical="true"
                             android:layout_alignParentRight="true"
                             android:paddingRight="8dp"
+                            android:onClick="click_add"
 
                             />
 

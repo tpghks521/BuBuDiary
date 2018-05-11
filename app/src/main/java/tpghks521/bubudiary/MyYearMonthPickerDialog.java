@@ -9,7 +9,9 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -19,41 +21,38 @@ import java.util.Calendar;
  */
 
 public class MyYearMonthPickerDialog extends DialogFragment {
-
+    TextView yeartext,monthtext;
     private static final int MAX_YEAR = 2045;
     private static final int MIN_YEAR = 1900;
-
+   static int yearpic;
+   static int monthpic;
+        int curr_year;
      DatePickerDialog.OnDateSetListener listener;
     public Calendar cal = Calendar.getInstance();
+
+
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+
+        curr_year=getArguments().getInt("year");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         View dialog = inflater.inflate(R.layout.cal_select_dialog, null);
 
-//        btnConfirm = dialog.findViewById(R.id.btn_confirm);
-//        btnCancel = dialog.findViewById(R.id.btn_cancel);
 
-        final NumberPicker monthPicker = (NumberPicker) dialog.findViewById(R.id.picker_month);
-        final NumberPicker yearPicker = (NumberPicker) dialog.findViewById(R.id.picker_year);
+        yeartext=dialog.findViewById(R.id.year);
 
-//        btnCancel.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                MyYearMonthPickerDialog.this.getDialog().cancel();
-//            }
-//        });
-//
-//        btnConfirm.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                listener.onDateSet(null, yearPicker.getValue(), monthPicker.getValue(), 0);
-//                MyYearMonthPickerDialog.this.getDialog().cancel();
-//            }
-//        });
+        yeartext.setText(curr_year+"");
+
+
+
+        final NumberPicker monthPicker = dialog.findViewById(R.id.picker_month);
+        final NumberPicker yearPicker = dialog.findViewById(R.id.picker_year);
+
 
         monthPicker.setMinValue(1);
         monthPicker.setMaxValue(12);
@@ -70,14 +69,21 @@ public class MyYearMonthPickerDialog extends DialogFragment {
         .setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                listener.onDateSet(null, yearPicker.getValue(), monthPicker.getValue(), 0);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new Calender_Activity().cal(yearPicker.getValue());
 
-            }
-        });
+              yearpic=   yearPicker.getValue();
+              monthpic=   monthPicker.getValue();
+
+            Calender_Activity.actionbar_year.setText(yearpic+"");
+                Calendaer_calcul_year.calendar_day_calcul_classes.clear();
+
+                new Calendaer_calcul_year().cal(yearpic,Calender_Activity.calender_adapter);
+
+                Calender_Activity.linearLayoutManager.scrollToPosition(monthpic-1);
+                if(monthpic<10) {
+                    Calender_Activity.month.setText("0"+monthpic + "");
+                }else if(monthpic>10){
+                    Calender_Activity.month.setText(monthpic + "");
+                }
 
             }
         })

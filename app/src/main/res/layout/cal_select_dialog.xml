@@ -19,17 +19,12 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="2018년"
-      android:textSize="20sp"
+      android:text="BuBu daiary"
+      android:textSize="25sp"
       android:textColor="#00b8d4"
+      android:id="@+id/year"
       />
-  <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="  4월"
-      android:textSize="20sp"
-      android:textColor="#00b8d4"
-      />
+
   </LinearLayout>
 
 
