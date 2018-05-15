@@ -1,91 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    android:id="@+id/coordinator"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    >
-
-<LinearLayout
-    android:orientation="vertical"
-    android:padding="0dp"
     android:background="#ffffff"
+    android:padding="0dp"
+        >
+<LinearLayout
+
+    android:orientation="vertical"
+    android:layout_weight="1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    >
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="#dddddd"
-    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/calendar_01"
+    <LinearLayout
+        android:id="@+id/ver_2_calendar_01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/ver_2_numberline_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/ver_2_addcalendar_textview_01"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:id="@+id/numberline_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                />
-            <TextView
-                android:id="@+id/addcalendar_textview_01"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="테스트1"
-                />
+            android:text="테스트1"
+            />
 
-        </LinearLayout>
-<!--세로 라인 경계선///////////////////////////////////////////////////-->
+    </LinearLayout>
+    <!--세로 라인 경계선///////////////////////////////////////////////////-->
+    <LinearLayout
+        android:id="@+id/ver_2_calendar_02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/ver_2_numberline_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/ver_2_addcalendar_textview_02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="테스트1"
+            />
+    </LinearLayout>
+    <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_02"
+            android:id="@+id/ver_2_calendar_03"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/numberline_02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                />
-            <TextView
-                android:id="@+id/addcalendar_textview_02"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="테스트1"
-                />
-
-        </LinearLayout>
-        <!--세로 라인 경계선///////////////////////////////////////////////////-->
-        <LinearLayout
-            android:id="@+id/calendar_03"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:id="@+id/numberline_03"
+                android:id="@+id/ver_2_numberline_03"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -93,7 +84,7 @@
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/addcalendar_textview_03"
+                android:id="@+id/ver_2_addcalendar_textview_03"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="테스트1"
@@ -102,14 +93,14 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_04"
+            android:id="@+id/ver_2_calendar_04"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/numberline_04"
+                android:id="@+id/ver_2_numberline_04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4"
@@ -117,7 +108,7 @@
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/addcalendar_textview_04"
+                android:id="@+id/ver_2_addcalendar_textview_04"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="테스트1"
@@ -126,14 +117,14 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_05"
+            android:id="@+id/ver_2_calendar_05"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/numberline_05"
+                android:id="@+id/ver_2_numberline_05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5"
@@ -141,7 +132,7 @@
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/addcalendar_textview_05"
+                android:id="@+id/ver_2_addcalendar_textview_05"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="테스트1"
@@ -150,14 +141,14 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_06"
+            android:id="@+id/ver_2_calendar_06"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/numberline_06"
+                android:id="@+id/ver_2_numberline_06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
@@ -165,7 +156,7 @@
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/addcalendar_textview_06"
+                android:id="@+id/ver_2_addcalendar_textview_06"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="테스트1"
@@ -174,14 +165,14 @@
         </LinearLayout>
         <!--세로 라인 경계선///////////////////////////////////////////////////-->
         <LinearLayout
-            android:id="@+id/calendar_07"
+            android:id="@+id/ver_2_calendar_07"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/numberline_07"
+                android:id="@+id/ver_2_numberline_07"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7"
@@ -189,7 +180,7 @@
                 android:textSize="20sp"
                 />
             <TextView
-                android:id="@+id/addcalendar_textview_07"
+                android:id="@+id/ver_2_addcalendar_textview_07"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="테스트1"
@@ -200,15 +191,14 @@
 
     </LinearLayout>
 </LinearLayout>
-    <!--가로 라인경게선////////////////////////////////////////////////////////-->
-
+<!--가로라인 /////////////////////////////////////////////////////////-->
 
     <LinearLayout
+
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_weight="1"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -217,15 +207,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
-                android:id="@+id/calendar_08"
+                android:id="@+id/ver_2_calendar_08"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_08"
+                    android:id="@+id/ver_2_numberline_08"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8"
@@ -233,7 +224,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_08"
+                    android:id="@+id/ver_2_addcalendar_textview_08"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -242,14 +233,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_09"
+                android:id="@+id/ver_2_calendar_09"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_09"
+                    android:id="@+id/ver_2_numberline_09"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9"
@@ -257,7 +248,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_09"
+                    android:id="@+id/ver_2_addcalendar_textview_09"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -266,14 +257,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_10"
+                android:id="@+id/ver_2_calendar_10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_10"
+                    android:id="@+id/ver_2_numberline_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10"
@@ -281,7 +272,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_10"
+                    android:id="@+id/ver_2_addcalendar_textview_10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -290,14 +281,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_11"
+                android:id="@+id/ver_2_calendar_11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_11"
+                    android:id="@+id/ver_2_numberline_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="11"
@@ -305,7 +296,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_11"
+                    android:id="@+id/ver_2_addcalendar_textview_11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -314,14 +305,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_12"
+                android:id="@+id/ver_2_calendar_12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_12"
+                    android:id="@+id/ver_2_numberline_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12"
@@ -329,7 +320,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_12"
+                    android:id="@+id/ver_2_addcalendar_textview_12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -338,14 +329,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_13"
+                android:id="@+id/ver_2_calendar_13"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_13"
+                    android:id="@+id/ver_2_numberline_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="13"
@@ -353,7 +344,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_13"
+                    android:id="@+id/ver_2_addcalendar_textview_13"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -362,14 +353,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_14"
+                android:id="@+id/ver_2_calendar_14"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_14"
+                    android:id="@+id/ver_2_numberline_14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="14"
@@ -377,7 +368,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_14"
+                    android:id="@+id/ver_2_addcalendar_textview_14"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -388,31 +379,31 @@
 
         </LinearLayout>
     </LinearLayout>
-    <!--가로 라인경게선////////////////////////////////////////////////////////-->
-
+    <!--가로라인 /////////////////////////////////////////////////////////-->
     <LinearLayout
+
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_weight="1"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#dddddd"
             />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
-                android:id="@+id/calendar_15"
+                android:id="@+id/ver_2_calendar_15"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_15"
+                    android:id="@+id/ver_2_numberline_15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15"
@@ -420,7 +411,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_15"
+                    android:id="@+id/ver_2_addcalendar_textview_15"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -429,14 +420,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_16"
+                android:id="@+id/ver_2_calendar_16"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_16"
+                    android:id="@+id/ver_2_numberline_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="16"
@@ -444,7 +435,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_16"
+                    android:id="@+id/ver_2_addcalendar_textview_16"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -453,14 +444,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_17"
+                android:id="@+id/ver_2_calendar_17"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_17"
+                    android:id="@+id/ver_2_numberline_17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="17"
@@ -468,7 +459,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_17"
+                    android:id="@+id/ver_2_addcalendar_textview_17"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -477,14 +468,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_18"
+                android:id="@+id/ver_2_calendar_18"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_18"
+                    android:id="@+id/ver_2_numberline_18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="18"
@@ -492,7 +483,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_18"
+                    android:id="@+id/ver_2_addcalendar_textview_18"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -501,14 +492,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_19"
+                android:id="@+id/ver_2_calendar_19"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_19"
+                    android:id="@+id/ver_2_numberline_19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="19"
@@ -516,7 +507,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_19"
+                    android:id="@+id/ver_2_addcalendar_textview_19"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -525,14 +516,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_20"
+                android:id="@+id/ver_2_calendar_20"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_20"
+                    android:id="@+id/ver_2_numberline_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20"
@@ -540,7 +531,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_20"
+                    android:id="@+id/ver_2_addcalendar_textview_20"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -549,14 +540,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_21"
+                android:id="@+id/ver_2_calendar_21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_21"
+                    android:id="@+id/ver_2_numberline_21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="21"
@@ -564,7 +555,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_21"
+                    android:id="@+id/ver_2_addcalendar_textview_21"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -574,14 +565,16 @@
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
 
         </LinearLayout>
+
     </LinearLayout>
-    <!--가로 라인경게선////////////////////////////////////////////////////////-->
+    <!--가로라인 /////////////////////////////////////////////////////////-->
+
     <LinearLayout
+
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_weight="1"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -591,14 +584,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
-                android:id="@+id/calendar_22"
+                android:id="@+id/ver_2_calendar_22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_22"
+                    android:id="@+id/ver_2_numberline_22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="22"
@@ -606,7 +599,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_22"
+                    android:id="@+id/ver_2_addcalendar_textview_22"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -615,14 +608,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_23"
+                android:id="@+id/ver_2_calendar_23"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_23"
+                    android:id="@+id/ver_2_numberline_23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="23"
@@ -630,7 +623,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_23"
+                    android:id="@+id/ver_2_addcalendar_textview_23"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -639,14 +632,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_24"
+                android:id="@+id/ver_2_calendar_24"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_24"
+                    android:id="@+id/ver_2_numberline_24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="24"
@@ -654,7 +647,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_24"
+                    android:id="@+id/ver_2_addcalendar_textview_24"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -663,14 +656,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_25"
+                android:id="@+id/ver_2_calendar_25"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_25"
+                    android:id="@+id/ver_2_numberline_25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="25"
@@ -678,7 +671,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_25"
+                    android:id="@+id/ver_2_addcalendar_textview_25"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -687,14 +680,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_26"
+                android:id="@+id/ver_2_calendar_26"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_26"
+                    android:id="@+id/ver_2_numberline_26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="26"
@@ -702,7 +695,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_26"
+                    android:id="@+id/ver_2_addcalendar_textview_26"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -711,14 +704,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_27"
+                android:id="@+id/ver_2_calendar_27"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_27"
+                    android:id="@+id/ver_2_numberline_27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="27"
@@ -726,7 +719,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_27"
+                    android:id="@+id/ver_2_addcalendar_textview_27"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -735,14 +728,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_28"
+                android:id="@+id/ver_2_calendar_28"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_28"
+                    android:id="@+id/ver_2_numberline_28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="28"
@@ -750,7 +743,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_28"
+                    android:id="@+id/ver_2_addcalendar_textview_28"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -761,13 +754,13 @@
 
         </LinearLayout>
     </LinearLayout>
-    <!--가로 라인경게선////////////////////////////////////////////////////////-->
+    <!--가로라인 /////////////////////////////////////////////////////////-->
     <LinearLayout
+
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_weight="1"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -776,15 +769,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
-                android:id="@+id/calendar_29"
+                android:id="@+id/ver_2_calendar_29"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_29"
+                    android:id="@+id/ver_2_numberline_29"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="29"
@@ -792,7 +786,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_29"
+                    android:id="@+id/ver_2_addcalendar_textview_29"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -801,14 +795,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_30"
+                android:id="@+id/ver_2_calendar_30"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_30"
+                    android:id="@+id/ver_2_numberline_30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30"
@@ -816,7 +810,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_30"
+                    android:id="@+id/ver_2_addcalendar_textview_30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="테스트1"
@@ -825,14 +819,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_31"
+                android:id="@+id/ver_2_calendar_31"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_31"
+                    android:id="@+id/ver_2_numberline_31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="31"
@@ -840,7 +834,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_31"
+                    android:id="@+id/ver_2_addcalendar_textview_31"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -849,14 +843,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_32"
+                android:id="@+id/ver_2_calendar_32"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_32"
+                    android:id="@+id/ver_2_numberline_32"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="32"
@@ -864,7 +858,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_32"
+                    android:id="@+id/ver_2_addcalendar_textview_32"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="테스트1"
@@ -873,14 +867,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_33"
+                android:id="@+id/ver_2_calendar_33"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_33"
+                    android:id="@+id/ver_2_numberline_33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="33"
@@ -888,7 +882,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_33"
+                    android:id="@+id/ver_2_addcalendar_textview_33"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -897,14 +891,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_34"
+                android:id="@+id/ver_2_calendar_34"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_34"
+                    android:id="@+id/ver_2_numberline_34"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="34"
@@ -912,7 +906,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_34"
+                    android:id="@+id/ver_2_addcalendar_textview_34"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -921,14 +915,14 @@
             </LinearLayout>
             <!--세로 라인 경계선///////////////////////////////////////////////////-->
             <LinearLayout
-                android:id="@+id/calendar_35"
+                android:id="@+id/ver_2_calendar_35"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/numberline_35"
+                    android:id="@+id/ver_2_numberline_35"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="35"
@@ -936,7 +930,7 @@
                     android:textSize="20sp"
                     />
                 <TextView
-                    android:id="@+id/addcalendar_textview_35"
+                    android:id="@+id/ver_2_addcalendar_textview_35"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="테스트1"
@@ -947,17 +941,193 @@
 
         </LinearLayout>
     </LinearLayout>
-    <!--가로 라인경게선////////////////////////////////////////////////////////-->
+    <!--가로라인 /////////////////////////////////////////////////////////-->
+    <LinearLayout
 
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_36"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="36"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_36"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="테스트1"
+                    />
 
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_37"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="37"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="테스트1"
+                    />
 
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_38"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="38"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="테스트1"
+                    />
+
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_39"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="39"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="테스트1"
+                    />
+
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_40"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="테스트1"
+                    />
+
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_41"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="41"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="테스트1"
+                    />
+
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+            <LinearLayout
+                android:id="@+id/ver_2_calendar_42"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/ver_2_numberline_42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="42"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/ver_2_addcalendar_textview_42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="테스트1"
+                    />
+
+            </LinearLayout>
+            <!--세로 라인 경계선///////////////////////////////////////////////////-->
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--가로라인 /////////////////////////////////////////////////////////-->
 
 </LinearLayout>
-
-
-
-    <!--/////////////////////////////////////////////////////////////////////-->
-
-    <!--/////////////////////////////////////////////////////////////////////-->
-</android.support.design.widget.CoordinatorLayout>

@@ -1,28 +1,16 @@
 package tpghks521.bubudiary;
 
-import android.annotation.SuppressLint;
+
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.error.VolleyError;
-import com.android.volley.request.SimpleMultiPartRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.w3c.dom.Text;
 
 public class Add_Member_Activity extends DialogFragment {
     String personEmail;
@@ -53,6 +41,7 @@ public class Add_Member_Activity extends DialogFragment {
                 intent.putExtra("personEmail",personEmail);
                 startActivity(intent);
 
+                new DBclass_Plan().createTable(getContext(),personEmail);
 
 
            }

@@ -9,11 +9,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.NumberPicker;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.Calendar;
 
 /**
@@ -81,7 +78,7 @@ public class MyYearMonthPickerDialog extends DialogFragment {
                 Calender_Activity.linearLayoutManager.scrollToPosition(monthpic-1);
                 if(monthpic<10) {
                     Calender_Activity.month.setText("0"+monthpic + "");
-                }else if(monthpic>10){
+                }else if(monthpic>=10){
                     Calender_Activity.month.setText(monthpic + "");
                 }
 

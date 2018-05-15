@@ -3,6 +3,7 @@ package tpghks521.bubudiary;
 
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -12,9 +13,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 
 
 public class Calender_Activity extends AppCompatActivity {
@@ -26,7 +31,8 @@ public class Calender_Activity extends AppCompatActivity {
     FloatingActionButton[] floatingActionButtons=new FloatingActionButton[3];
     View floating_view;
     TextView[] floatingActionButtons_text=new TextView[4];
-
+    Button sign_out_button;
+    TextView flb_set_date;
 
    public static TextView actionbar_year;
    public static int actionbar_year_number=2018;
@@ -38,13 +44,16 @@ public class Calender_Activity extends AppCompatActivity {
    RecyclerView recyclerView;
     int month_position;
     ImageView actionbar_allow_down;
-
-
+String personEmail;
+    String   personName;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
+        Intent intent = new Intent();
+            personEmail=  intent.getStringExtra("personEmail");
+            personName=  intent.getStringExtra("personName");
 
 //------------------------------------------------------------------------------------------------------------
             cal_fab=findViewById(R.id.cal_fab);
@@ -60,15 +69,15 @@ public class Calender_Activity extends AppCompatActivity {
         floatingActionButtons_text[1]=findViewById(R.id.FloatingActionButton_wallet_text);
         floatingActionButtons_text[2]=findViewById(R.id.FloatingActionButton_weather_text);
         floatingActionButtons_text[3]=findViewById(R.id.flb_set_date);
-
-
+        flb_set_date=findViewById(R.id.flb_set_date);
+            sign_out_button=findViewById(R.id.sign_out_button);
 //------------------------------------------------------------------------------------------------------------
 
         new Calendaer_calcul_year().cal(actionbar_year_number,calender_adapter);
         actionbar_year=findViewById(R.id.actionbar_year);
         actionbar_year.setText(actionbar_year_number+"");
         month=findViewById(R.id.month_select);
-        calender_adapter = new Calender_Adapter(this, cal_fab, fab_text, Calendaer_calcul_year.calendar_day_calcul_classes, floatingActionButtons, floating_view, floatingActionButtons_text);
+        calender_adapter = new Calender_Adapter(this, cal_fab, fab_text,Calendaer_calcul_year.years_string, Calendaer_calcul_year.calendar_day_calcul_classes, floatingActionButtons, floating_view, floatingActionButtons_text,flb_set_date);
         recyclerView.setAdapter(calender_adapter);
 //------------------------------------------------------------------------------------------------------------
 
@@ -106,9 +115,20 @@ public class Calender_Activity extends AppCompatActivity {
             }
         });
 //------------------------------------------------------------------------------------------------------------
-
+            sign_out_button.setOnClickListener(sign_out_buttonclick);
     }//oncreate
+View.OnClickListener sign_out_buttonclick = new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+//        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+//            @Override
+//            public void onResult(@NonNull Status status) {
+//
+//            }
+//        });
 
+    }
+};
 //------------------------------------------------------------------------------------------------------------
 
     RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
