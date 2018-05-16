@@ -18,7 +18,7 @@ import com.android.volley.toolbox.Volley;
 public class DBclass {
 
     Context context;
-    String personEmail;
+
     FragmentManager fragmentManager;
 
     public DBclass(Context context) {

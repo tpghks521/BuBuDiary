@@ -42,7 +42,7 @@ public class Calender_Activity extends AppCompatActivity {
    RecyclerView recyclerView;
     int month_position;
     ImageView actionbar_allow_down;
-String personEmail;
+    String      personEmail;
     String   personName;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ String personEmail;
 
         Intent intent = new Intent();
             personEmail=  intent.getStringExtra("personEmail");
-            personName=  intent.getStringExtra("personName");
+            personName=  intent.getStringExtra("userName");
 
 //------------------------------------------------------------------------------------------------------------
             cal_fab=findViewById(R.id.cal_fab);
