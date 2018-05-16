@@ -1,6 +1,7 @@
 package tpghks521.bubudiary;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,11 +23,13 @@ public class KakaoSignupActivity extends Activity {
     private String userName;
     private String userId;
     private String profileUrl;
+    FragmentManager fragmentManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         System.out.println("a1");
         requestMe();
+
     }
 
 
@@ -83,7 +86,7 @@ public class KakaoSignupActivity extends Activity {
 
 
         DBclass dBclass = new DBclass(this);
-        //dBclass.loadDB(userId);
+      //  dBclass.loadDB(userId);
 
 
 
