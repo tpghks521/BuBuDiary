@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tpghks521.bubudiary.MainActivity">
+    tools:context="tpghks521.bubudiary.KakaoLoginActivity">
 
+  <com.kakao.usermgmt.LoginButton
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      >
+
+
+  </com.kakao.usermgmt.LoginButton>
 
 
 </RelativeLayout>

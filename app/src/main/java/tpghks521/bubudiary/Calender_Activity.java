@@ -17,9 +17,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 
 
 public class Calender_Activity extends AppCompatActivity {
@@ -30,6 +27,7 @@ public class Calender_Activity extends AppCompatActivity {
     TextView fab_text;
     FloatingActionButton[] floatingActionButtons=new FloatingActionButton[3];
     View floating_view;
+
     TextView[] floatingActionButtons_text=new TextView[4];
     Button sign_out_button;
     TextView flb_set_date;
@@ -70,7 +68,9 @@ String personEmail;
         floatingActionButtons_text[2]=findViewById(R.id.FloatingActionButton_weather_text);
         floatingActionButtons_text[3]=findViewById(R.id.flb_set_date);
         flb_set_date=findViewById(R.id.flb_set_date);
-            sign_out_button=findViewById(R.id.sign_out_button);
+            View header =navigationView.getHeaderView(0);
+
+            sign_out_button=header.findViewById(R.id.sign_out_button);
 //------------------------------------------------------------------------------------------------------------
 
         new Calendaer_calcul_year().cal(actionbar_year_number,calender_adapter);
@@ -115,20 +115,9 @@ String personEmail;
             }
         });
 //------------------------------------------------------------------------------------------------------------
-            sign_out_button.setOnClickListener(sign_out_buttonclick);
+            //sign_out_button.setOnClickListener();
     }//oncreate
-View.OnClickListener sign_out_buttonclick = new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-//        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
-//            @Override
-//            public void onResult(@NonNull Status status) {
-//
-//            }
-//        });
 
-    }
-};
 //------------------------------------------------------------------------------------------------------------
 
     RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
@@ -151,6 +140,7 @@ View.OnClickListener sign_out_buttonclick = new View.OnClickListener() {
     public void click_actionbar_menu(View view) {
 
         drawerLayout.openDrawer(navigationView);
+
 
     }//click_actionbar_menu
 
