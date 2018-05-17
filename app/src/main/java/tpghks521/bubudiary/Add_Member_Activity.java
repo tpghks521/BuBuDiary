@@ -14,14 +14,16 @@ import android.widget.TextView;
 
 public class Add_Member_Activity extends DialogFragment {
     String personEmail;
-    TextView email_id;
+    String userId;
 
+
+    TextView email_id;
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         personEmail=getArguments().getString("personEmail");
-
+        userId=getArguments().getString("userId");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -29,20 +31,21 @@ public class Add_Member_Activity extends DialogFragment {
 
         email_id=dialog.findViewById(R.id.email_id);
 
-        email_id.setText(personEmail);
+        email_id.setText(userId);
 
         builder.setView(dialog).setPositiveButton("확인", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                new DBclass(getContext()).uploadDB(personEmail);
+                new DBclass().uploadDB(getContext(),personEmail);
+                new DBclass().createTable(getContext(),personEmail);
                 Intent intent = new Intent(getContext(), Calender_Activity.class);
                 intent.putExtra("personEmail",personEmail);
+
+
+
                 startActivity(intent);
-
-                new DBclass_Plan().createTable(getContext(),personEmail);
-
 
            }
         })

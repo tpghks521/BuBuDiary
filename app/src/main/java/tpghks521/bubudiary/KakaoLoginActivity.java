@@ -38,7 +38,7 @@ public class KakaoLoginActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        System.out.println("a1");
+
         super.onDestroy();
         Session.getCurrentSession().removeCallback(callback);
 
@@ -49,13 +49,13 @@ public class KakaoLoginActivity extends AppCompatActivity {
 
         @Override
         public void onSessionOpened() {
-            System.out.println("a2");
+
                 redirectSignupActivity();
         }//onSessionOpened
 
         @Override
         public void onSessionOpenFailed(KakaoException exception) {
-            System.out.println("a3");
+
             if(exception != null){
                 Logger.e(exception);
             }

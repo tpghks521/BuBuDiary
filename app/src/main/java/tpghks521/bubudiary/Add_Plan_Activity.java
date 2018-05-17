@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Add_Plan_Activity extends AppCompatActivity {
 
@@ -24,8 +25,8 @@ public class Add_Plan_Activity extends AppCompatActivity {
    String time;
    String repeat;
    String alarm;
-   String explain;
 
+    String personEmail;
 
 
     AlertDialog dialog;
@@ -73,7 +74,12 @@ public class Add_Plan_Activity extends AppCompatActivity {
         builder.setPositiveButton("저장", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                new DBclass_Plan().uploadDB(Add_Plan_Activity.this,year,month,day,plan,time,repeat,alarm,explain);
+
+                plan=add_activity_title.getText().toString();
+
+
+
+                new DBclass().table_uploadDB(Add_Plan_Activity.this,year,month,day,plan,time,repeat,alarm);
 
 
             }
@@ -97,14 +103,24 @@ public class Add_Plan_Activity extends AppCompatActivity {
 
     public void click_set_repeat(View view) {
     }
-
+//----------------------------------------------------------------
 
     public void click_set_date(View view) {
+
+    Add_Plan_alram_picker_dialog add_plan_alram_picker_dialog = new Add_Plan_alram_picker_dialog();
+
+    add_plan_alram_picker_dialog.show(getSupportFragmentManager(),"test");
+
+
     }
 
     public void click_set_time(View view) {
-    }
 
+
+
+
+    }
+    //----------------------------------------------------------------
     public void click_add(View view) {
 
         dialog.show();

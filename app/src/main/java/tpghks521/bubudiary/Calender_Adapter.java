@@ -40,7 +40,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
     String d;
     TextView flb_set_date;
     //-----------------------테스트
-
+    String personEmail;
     public Calender_Adapter(Context context, FloatingActionButton cal_fab, TextView fab_text, String years, ArrayList<Calendar_Day_calcul_class> calendar_day_calcul_classes, FloatingActionButton[] floatingActionButtons, View floating_view, TextView[] floatingActionButtons_texts, TextView flb_set_day) {
         this.context = context;
         this.floating_view = floating_view;
@@ -222,6 +222,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
             intent.putExtra("year",y);
             intent.putExtra("month",m);
             intent.putExtra("day",d);
+            intent.putExtra("personEmail",personEmail);
             context.startActivity(intent);
         }
     };

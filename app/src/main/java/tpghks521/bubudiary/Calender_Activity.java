@@ -149,6 +149,7 @@ public class Calender_Activity extends AppCompatActivity {
 
     public void click_add(View view) {
         Intent intent = new Intent(this,Add_Plan_Activity.class);
+        intent.putExtra("personEmail",personEmail);
         startActivity(intent);
     }
 

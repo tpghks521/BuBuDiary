@@ -1,10 +1,12 @@
 package tpghks521.bubudiary;
 
 import android.app.Activity;
-import android.app.FragmentManager;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.kakao.auth.ErrorCode;
@@ -18,7 +20,7 @@ import com.kakao.util.helper.log.Logger;
  * Created by tpghk on 2018-05-16.
  */
 
-public class KakaoSignupActivity extends Activity {
+public class KakaoSignupActivity extends AppCompatActivity {
 
     private String userName;
     private String userId;
@@ -29,7 +31,7 @@ public class KakaoSignupActivity extends Activity {
         super.onCreate(savedInstanceState);
         System.out.println("a1");
         requestMe();
-
+        fragmentManager=getSupportFragmentManager();
     }
 
 
@@ -69,6 +71,9 @@ public class KakaoSignupActivity extends Activity {
                 userName = userProfile.getNickname();
                 System.out.println(userId+"아이디");
                 System.out.println(userName+"네임");
+                LoginMemberClass.personId=userId;
+                LoginMemberClass.personName=userName;
+
                 redirectMainActivity();
             }
         });
@@ -80,20 +85,20 @@ public class KakaoSignupActivity extends Activity {
     }
     private void redirectMainActivity(){
 
-        Intent intent =new Intent(this,Calender_Activity.class);
-        intent.putExtra("personEmail",userId);
-        intent.putExtra("userName",userName);
+//        Intent intent =new Intent(this,Calender_Activity.class);
+//        intent.putExtra("personEmail",userId);
+//        intent.putExtra("userName",userName);
 
 
-        DBclass dBclass = new DBclass(this);
-      //  dBclass.loadDB(userId);
+        DBclass dBclass = new DBclass();
+        dBclass.loadDB(KakaoSignupActivity.this,userId,userName,fragmentManager);
 
 
 
+//
+//        startActivity(intent);
 
-        startActivity(intent);
-
-            finish();
+//            finish();
     }
     protected void redirectLoginActivity(){
         final Intent intent = new Intent(this,KakaoLoginActivity.class);
