@@ -88,9 +88,9 @@ public class MyYearMonthPickerDialog extends DialogFragment {
             public void onClick(DialogInterface dialog, int id) {
               //  MyYearMonthPickerDialog.this.getDialog().cancel();
             }
-        })
+        });
 
-        ;
+
 
         return builder.create();
     }

@@ -2,6 +2,7 @@ package tpghks521.bubudiary;
 
 
 
+import android.app.AlarmManager;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.GregorianCalendar;
 
 
 public class Calender_Activity extends AppCompatActivity {
@@ -37,6 +39,7 @@ public class Calender_Activity extends AppCompatActivity {
    public static LinearLayoutManager linearLayoutManager;
    public static TextView month;
    public static  Calender_Adapter calender_adapter;
+
 
 
    RecyclerView recyclerView;
@@ -152,5 +155,7 @@ public class Calender_Activity extends AppCompatActivity {
         intent.putExtra("personEmail",personEmail);
         startActivity(intent);
     }
+
+
 
 }//class

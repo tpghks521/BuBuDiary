@@ -86,25 +86,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
+<Spinner
+    android:id="@+id/time_spinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:spinnerMode="dropdown"
 
-        <TextView
-            android:id="@+id/add_timepicker_am"
-            android:clickable="true"
-            android:textSize="10sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="오전"
-            />
-        <TextView
-            android:id="@+id/add_timepicker_fm"
-            android:clickable="true"
-            android:paddingTop="8dp"
-            android:textSize="12sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="오후"
 
-            />
+    >
+
+
+</Spinner>
+
         </LinearLayout>
 
         <NumberPicker

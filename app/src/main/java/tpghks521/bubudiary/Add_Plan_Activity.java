@@ -12,10 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Add_Plan_Activity extends AppCompatActivity {
 
     EditText add_activity_title,add_activity_place;
-    TextView addactivity_date,addactivity_time;
+   public static TextView addactivity_date,addactivity_time;
+
     ImageView add_activity_alarm;
     String date;
     String year;
@@ -27,14 +31,16 @@ public class Add_Plan_Activity extends AppCompatActivity {
    String alarm;
 
     String personEmail;
-
-
+    String cu_year;
+    String cu_month_date;
+    String cu_time;
+ String sel_fm_am;
     AlertDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__plan_);
-
+        getTime();
 
         add_activity_title=findViewById(R.id.add_activity_title);
         add_activity_place=findViewById(R.id.add_activity_place);
@@ -48,21 +54,16 @@ public class Add_Plan_Activity extends AppCompatActivity {
          day= intent.getStringExtra("day");
 
 
-
+        addactivity_time.setText(sel_fm_am+" "+cu_time);
          if(year==(null)) {
-             year="2018";
+             date=cu_year+"-"+cu_month_date;
          }
-        if(month==(null)) {
-            month="05";
-        }
-        if(day==(null)) {
-            day="21";
-        }
+
         if(plan==null){
              plan="테스트중입니다.";
         }
 
-        date = year+"-"+month+"-"+day;
+
         addactivity_date.setText(date);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -99,6 +100,8 @@ public class Add_Plan_Activity extends AppCompatActivity {
 
 
     public void click_set_alarm(View view) {
+
+
     }
 
     public void click_set_repeat(View view) {
@@ -111,12 +114,13 @@ public class Add_Plan_Activity extends AppCompatActivity {
 
     add_plan_alram_picker_dialog.show(getSupportFragmentManager(),"test");
 
-
     }
 
     public void click_set_time(View view) {
 
+        Add_Plan_alram_picker_dialog add_plan_alram_picker_dialog = new Add_Plan_alram_picker_dialog();
 
+        add_plan_alram_picker_dialog.show(getSupportFragmentManager(),"test");
 
 
     }
@@ -129,4 +133,30 @@ public class Add_Plan_Activity extends AppCompatActivity {
 
     public void click_back(View view) {
     }
-}
+
+
+
+
+
+
+
+
+
+
+    void getTime(){
+        long now = System.currentTimeMillis();
+
+        Date date = new Date(now);
+        SimpleDateFormat sdg = new SimpleDateFormat("yyyy/MM/dd/aa/HH/mm");
+        String getTime = sdg.format(date);
+
+        String[] timelist= getTime.split("/");
+
+         cu_year=timelist[0];
+         cu_month_date=timelist[1]+"-"+timelist[2];
+        sel_fm_am=timelist[3];
+        cu_time=timelist[4]+":"+timelist[5];
+
+
+    }
+}//class
