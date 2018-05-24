@@ -104,16 +104,7 @@
         android:onClick="click_set_time"
         />
 
-    <ImageView
-        android:id="@+id/add_activity_alarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/add_alarm_img"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:paddingRight="16dp"
-        android:onClick="click_set_alarm"
-        />
+
 
 </RelativeLayout>
 
@@ -167,6 +158,7 @@
 
         <!--////////////////////////////////////////////////////////////////////////////-->
 <RelativeLayout
+    android:id="@+id/setting_alarm"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
@@ -174,22 +166,27 @@
     >
     <ImageView
         android:paddingLeft="8dp"
-        android:id="@+id/add_activity_reapet"
+        android:id="@+id/add_activity_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/add_repeat_activity"
+        android:src="@mipmap/add_alarm_img"
+
+        android:layout_centerVertical="true"
+
+        android:onClick="click_set_alarm"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="반복설정"
+        android:text="알림설정"
         android:textSize="20sp"
         android:paddingLeft="16dp"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/add_activity_reapet"
+        android:layout_toRightOf="@+id/add_activity_alarm"
         />
     <ImageView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/add_activity_re_img"
@@ -206,7 +203,46 @@
             android:background="#dddddd"
             />
         <!--////////////////////////////////////////////////////////////////////////////-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="click_set_repeat"
+            >
+            <ImageView
+                android:paddingLeft="8dp"
+                android:id="@+id/add_activity_reapet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/add_repeat_activity"
+                />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="반복설정"
+                android:textSize="20sp"
+                android:paddingLeft="16dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/add_activity_reapet"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/add_activity_re_img"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:paddingTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            />
+        <!--////////////////////////////////////////////////////////////////////////////-->
      <RelativeLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content">

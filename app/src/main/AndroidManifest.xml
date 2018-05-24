@@ -3,17 +3,14 @@
     package="tpghks521.bubudiary">
 
     <uses-permission android:name="android.permission.INTERNET" />
-   <application
 
+    <application
         android:name=".ApplicationController"
-
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,12 +20,17 @@
         </activity>
         <activity android:name=".Calender_Activity" />
         <activity android:name=".Add_Plan_Activity" />
-        <activity android:name=".KakaoLoginActivity"></activity>
-       <activity android:name=".KakaoSignupActivity"/>
+        <activity android:name=".KakaoLoginActivity" />
+        <activity android:name=".KakaoSignupActivity" />
+        <activity android:name=".Alarm_Manager_Activity" />
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key"
-            />
+            android:value="@string/kakao_app_key" />
+
+        <receiver android:name=".AlarmReceiver" />
+
+        <activity android:name=".Repeat_Activity"></activity>
     </application>
 
 </manifest>

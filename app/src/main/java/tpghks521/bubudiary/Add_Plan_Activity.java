@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import java.util.Date;
 
 public class Add_Plan_Activity extends AppCompatActivity {
 
+    RelativeLayout setting_alarm;
     EditText add_activity_title,add_activity_place;
    public static TextView addactivity_date,addactivity_time;
 
@@ -42,6 +44,8 @@ public class Add_Plan_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_add__plan_);
         getTime();
 
+
+        setting_alarm=findViewById(R.id.setting_alarm);
         add_activity_title=findViewById(R.id.add_activity_title);
         add_activity_place=findViewById(R.id.add_activity_place);
         addactivity_date=findViewById(R.id.addactivity_date);
@@ -95,14 +99,16 @@ public class Add_Plan_Activity extends AppCompatActivity {
          dialog = builder.create();
         dialog.setCanceledOnTouchOutside(false);
 
+        setting_alarm.setOnClickListener(setalarm);
+    }//oncerate
 
-    }
-
-
-    public void click_set_alarm(View view) {
-
-
-    }
+    View.OnClickListener setalarm = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent =new Intent(Add_Plan_Activity.this,Alarm_Manager_Activity.class);
+            startActivity(intent);
+        }
+    };
 
     public void click_set_repeat(View view) {
     }

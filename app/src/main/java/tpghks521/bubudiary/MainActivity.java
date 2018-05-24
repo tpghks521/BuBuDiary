@@ -22,11 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        Intent intent = new Intent(this, KakaoLoginActivity.class);
-//        startActivity(intent);
-
-        Intent intent = new Intent(this, Alarm_Manager_Activity.class);
+        Intent intent = new Intent(this, Repeat_Activity.class);
         startActivity(intent);
+
+
 //        Calendar currentTime = Calendar.getInstance();
 //
 //          System.out.println(

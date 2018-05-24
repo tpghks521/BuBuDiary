@@ -19,6 +19,9 @@ android {
 }
 
 
+
+
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -29,8 +32,6 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
-    compile 'com.wefika:horizontal-picker:1.1.1'
-
 
     compile 'dev.dworks.libs:volleyplus:+'
 
