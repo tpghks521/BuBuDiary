@@ -271,6 +271,7 @@ switch (view.getId()){
             String popup_edit = alarm_manager_popup_textview.getText().toString();
             System.out.println(popup_edit+"에드");
             String[] popup_alarm= popup_edit.split(",");
+            Toast.makeText(Alarm_Manager_Activity.this, popup_edit, Toast.LENGTH_SHORT).show();
 
         }
     };

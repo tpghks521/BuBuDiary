@@ -111,6 +111,8 @@ public class Add_Plan_Activity extends AppCompatActivity {
     };
 
     public void click_set_repeat(View view) {
+        Intent intent = new Intent(Add_Plan_Activity.this,Repeat_Activity.class);
+        startActivity(intent);
     }
 //----------------------------------------------------------------
 
