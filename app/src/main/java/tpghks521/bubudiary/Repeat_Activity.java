@@ -10,10 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.owater.library.CircleTextView;
-
-import org.w3c.dom.Text;
-
 
 public class Repeat_Activity extends AppCompatActivity {
 
