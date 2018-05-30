@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Intent intent = new Intent(this, KakaoLoginActivity.class);
+        Intent intent = new Intent(this, Calender_Activity.class);
         startActivity(intent);
 
 

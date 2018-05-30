@@ -53,7 +53,11 @@ public class Calender_Activity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+//---------------------------------테스트
+new DBclass().loadTable(this,"777544747");
 
+
+            //---------------------------------
         Intent intent = new Intent();
             personEmail=  intent.getStringExtra("personEmail");
             personName=  intent.getStringExtra("userName");
