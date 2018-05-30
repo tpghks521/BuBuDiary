@@ -77,6 +77,12 @@ void uploadDB(Context context,String personEmail){
 
                                 }
 
+                                //여기서 테이블정보불러오기
+                                loadTable(context,personEmail);
+
+
+
+
                             }
                         }, new Response.ErrorListener() {
                             @Override
@@ -123,7 +129,7 @@ void uploadDB(Context context,String personEmail){
         multiPartRequest.addStringParam("repeat",repeat);
         multiPartRequest.addStringParam("alarm",alarm);
         multiPartRequest.addStringParam("personEmail",LoginMemberClass.personId);
-
+            System.out.println(LoginMemberClass.personId+"여기요");
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(multiPartRequest);
 
@@ -131,6 +137,28 @@ void uploadDB(Context context,String personEmail){
     }//uploadDB
 
 
+    void loadTable(final Context context, final String personEmail){
+        String serverUrl="http://tpghks521.dothome.co.kr/android/BuBudiaryLoadPlan.php";
+        SimpleMultiPartRequest multiPartRequest_load_table = new SimpleMultiPartRequest(Request.Method.POST, serverUrl, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                System.out.println("여기부터"+response);
+
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error+"에러");
+            }
+        }
+        );
+        multiPartRequest_load_table.addStringParam("personEmail",personEmail);
+        RequestQueue requestQueue_loadTable = Volley.newRequestQueue(context);
+        requestQueue_loadTable.add(multiPartRequest_load_table);
+    }//loadTable
 
 
     void createTable(Context context , String personEmail){

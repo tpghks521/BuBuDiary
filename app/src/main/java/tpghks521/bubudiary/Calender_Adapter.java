@@ -113,8 +113,10 @@ public class Calender_Adapter extends RecyclerView.Adapter {
           //  m = (position + 1) + "";
 
 //--------------------------------------------------------------------------------------- 이거를 메소드로 만들어서 실행시킴
-            input_plan(position,2018,5,21,maxnumber,"내생일");//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
 
+
+            input_plan(position,2018,5,21,maxnumber,"내생일");//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
+            new DBclass().loadTable(context,LoginMemberClass.personId);
 //-------------------------------------------------------------------------------
 
 

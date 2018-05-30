@@ -97,7 +97,7 @@ public class Repeat_Activity extends AppCompatActivity {
     void change_text(int num) {
         if (num == 1) {
             alarm_manager_popup_text.setText("매일");
-            alarm_manager_popup_text2.setText("반복");
+
             alarm_manager_email_edit.setText("일마다");
         } else {
             alarm_manager_popup_text.setText("매주");
@@ -234,8 +234,18 @@ public class Repeat_Activity extends AppCompatActivity {
 
 
     public void click_repeat_add(View view) {
-      String result=   alarm_manager_popup_text2.getText().toString();
-        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+        String result=   alarm_manager_popup_text2.getText().toString();
+
+    if(alarm_manager_popup_text.getText().equals("매일")){
+       // Add_Plan_Datas.setRepeat_daily_data(result);
+        Add_Plan_Activity.repeatText.setText("매"+"일 마다 반복");
+    }else if(alarm_manager_popup_text.getText().equals("매주")){
+        Add_Plan_Datas.setRepeat_week_data(result);
+        Add_Plan_Activity.repeatText.setText("매주  " + result+" 반복");
+    }
+
+        Add_Plan_Activity.repeatText.setTextSize(15);
+        Add_Plan_Datas.setRepeat_week_data(result);
         finish();
     }
 }//class

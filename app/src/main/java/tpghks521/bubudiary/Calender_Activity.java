@@ -22,6 +22,8 @@ import java.util.GregorianCalendar;
 
 
 public class Calender_Activity extends AppCompatActivity {
+
+
     NavigationView navigationView;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -119,7 +121,8 @@ public class Calender_Activity extends AppCompatActivity {
         });
 //------------------------------------------------------------------------------------------------------------
             //sign_out_button.setOnClickListener();
-    }//oncreate
+
+        }//oncreate
 
 //------------------------------------------------------------------------------------------------------------
 

@@ -37,14 +37,15 @@ public class Alarm_Manager_Activity extends AppCompatActivity {
     TextView before_at;
     RelativeLayout[] relativeLayouts = new RelativeLayout[12];
     TextView[] befores = new TextView[12];
-    TextView[] befores_text=new TextView[12];
+    TextView[] befores_text = new TextView[12];
     TextView alarm_manager_popup;
     TextView alarm_manager_email;
     TextView alarm_manager_popup_textview;
     TextView alarm_manager_email_textview;
     ImageView alarm_manager_click_add;
     View[] views = new View[12];
-    boolean[] check_selcet= new boolean[12];
+    boolean[] check_selcet = new boolean[12];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,198 +61,198 @@ public class Alarm_Manager_Activity extends AppCompatActivity {
         for (int i = 0; i < 12; i++) {
             relativeLayouts[i].setBackgroundColor(Color.parseColor("#bbbbbb"));
 
-           views[i].setOnClickListener(view_listner);
+            views[i].setOnClickListener(view_listner);
 
         }
 
 
-
-
-
-
     }//oncreate
-//--------------------------------------------------------------------------------------- 버튼 레이아웃 클릭리스너
-    boolean clickbtn_layout =false;
+
+    //--------------------------------------------------------------------------------------- 버튼 레이아웃 클릭리스너
+    boolean clickbtn_layout = false;
     View.OnClickListener view_listner = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
 
+            switch (view.getId()) {
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view01:
+                    if (check_selcet[0]) {
+                        relativeLayouts[0].setBackgroundColor(Color.parseColor("#bbbbbb"));
+                        befores[0].setTextColor(Color.parseColor("#000000"));
+                        check_selcet[0] = false;
 
+                    } else {
+                        relativeLayouts[0].setBackgroundColor(Color.parseColor("#ffffff"));
+                        befores[0].setTextColor(Color.parseColor("#0097a7"));
+                        check_selcet[0] = true;
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view02:
 
-switch (view.getId()){
+                    if (check_selcet[1]) {
+                        returnColor(1);
+                        delet_popup_text(1);
+                    } else {
+                        changeColor(1);
+                        input_popup_text(1);
+                    }
+                    break;
 //-------------------------------------------------------------------------------------------------------
-    case R.id.view01:
-        if(check_selcet[0]){
-            relativeLayouts[0].setBackgroundColor(Color.parseColor("#bbbbbb"));
-            befores[0].setTextColor(Color.parseColor("#000000"));
-            check_selcet[0] = false;
+                case R.id.view03:
+                    if (check_selcet[2]) {
+                        returnColor(2);
+                        delet_popup_text(2);
+                    } else {
+                        changeColor(2);
+                        input_popup_text(2);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view04:
+                    if (check_selcet[3]) {
+                        returnColor(3);
+                        delet_popup_text(3);
+                    } else {
+                        changeColor(3);
+                        input_popup_text(3);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view05:
+                    if (check_selcet[4]) {
+                        returnColor(4);
+                    } else {
+                        changeColor(4);
+                        input_popup_text(4);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view06:
+                    if (check_selcet[5]) {
+                        returnColor(5);
+                        delet_popup_text(5);
+                    } else {
+                        changeColor(5);
+                        input_popup_text(5);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view07:
+                    if (check_selcet[6]) {
+                        returnColor(6);
+                        delet_popup_text(6);
+                    } else {
+                        changeColor(6);
+                        input_popup_text(6);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view08:
+                    if (check_selcet[7]) {
+                        returnColor(7);
+                        delet_popup_text(7);
+                    } else {
+                        changeColor(7);
+                        input_popup_text(7);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view09:
+                    if (check_selcet[8]) {
+                        returnColor(8);
+                        delet_popup_text(8);
+                    } else {
+                        changeColor(8);
+                        input_popup_text(8);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view10:
+                    if (check_selcet[9]) {
+                        returnColor(9);
+                        delet_popup_text(9);
+                    } else {
+                        changeColor(9);
+                        input_popup_text(9);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view11:
+                    if (check_selcet[10]) {
+                        returnColor(10);
+                        delet_popup_text(10);
+                    } else {
+                        changeColor(10);
+                        input_popup_text(10);
+                    }
+                    break;
+//-------------------------------------------------------------------------------------------------------
+                case R.id.view12:
+                    if (check_selcet[11]) {
+                        returnColor(11);
+                        delet_popup_text(11);
+                    } else {
+                        changeColor(11);
+                        input_popup_text(11);
+                    }
+                    break;
 
-        }else {
-            relativeLayouts[0].setBackgroundColor(Color.parseColor("#ffffff"));
-            befores[0].setTextColor(Color.parseColor("#0097a7"));
-            check_selcet[0] = true;
-        }
-        break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view02:
-
-     if(check_selcet[1]){
-         returnColor(1);
-         delet_popup_text(1);
-     }else {
-         changeColor(1);
-         input_popup_text(1);
-     }
-        break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view03:
-        if(check_selcet[2]){
-            returnColor(2);
-            delet_popup_text(2);
-        }else {
-            changeColor(2);
-            input_popup_text(2);
-        }
-        break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view04:
-        if(check_selcet[3]){
-            returnColor(3);
-            delet_popup_text(3);
-        }else {
-            changeColor(3);
-            input_popup_text(3);
-        }
-        break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view05:
-        if(check_selcet[4]){
-            returnColor(4);
-        }else {
-            changeColor(4);
-            input_popup_text(4);
-        }
-         break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view06:
-        if(check_selcet[5]){
-            returnColor(5);
-            delet_popup_text(5);
-        }else {
-            changeColor(5);
-            input_popup_text(5);
-        }
-         break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view07:
-        if(check_selcet[6]){
-            returnColor(6);
-            delet_popup_text(6);
-        }else {
-            changeColor(6);
-            input_popup_text(6);
-        }
-        break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view08:
-        if(check_selcet[7]){
-            returnColor(7);
-            delet_popup_text(7);
-        }else {
-            changeColor(7);
-            input_popup_text(7);
-        }
-           break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view09:
-        if(check_selcet[8]){
-            returnColor(8);
-            delet_popup_text(8);
-        }else {
-            changeColor(8);
-            input_popup_text(8);
-        }
-          break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view10:
-        if(check_selcet[9]){
-            returnColor(9);
-            delet_popup_text(9);
-        }else {
-            changeColor(9);
-            input_popup_text(9);
-        }
-         break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view11:
-        if(check_selcet[10]){
-            returnColor(10);
-            delet_popup_text(10);
-        }else {
-            changeColor(10);
-            input_popup_text(10);
-        }
-         break;
-//-------------------------------------------------------------------------------------------------------
-    case R.id.view12:
-        if(check_selcet[11]){
-            returnColor(11);
-            delet_popup_text(11);
-        }else {
-            changeColor(11);
-            input_popup_text(11);
-        }
-         break;
-
-        }//switch
+            }//switch
 
         }//onclick
     };
-//-----------------------------------------------------------------------------------------------------
-    void changeColor(int num){
+
+    //-----------------------------------------------------------------------------------------------------
+    void changeColor(int num) {
         relativeLayouts[num].setBackgroundColor(Color.parseColor("#ffffff"));
         befores[num].setTextColor(Color.parseColor("#0097a7"));
         befores_text[num].setTextColor(Color.parseColor("#0097a7"));
-        check_selcet[num]=true;
+        check_selcet[num] = true;
     }//changeColor
-    void returnColor(int num){
+
+    void returnColor(int num) {
         relativeLayouts[num].setBackgroundColor(Color.parseColor("#bbbbbb"));
         befores[num].setTextColor(Color.parseColor("#000000"));
         befores_text[num].setTextColor(Color.parseColor("#000000"));
-        check_selcet[num]=false;
+        check_selcet[num] = false;
     }//returnColor
-    void input_popup_text(int number){
 
-       String num= befores[number].getText().toString();
-       String num_text=befores_text[number].getText().toString();
-       String inputtext=num+num_text;
+    void input_popup_text(int number) {
+
+        String num = befores[number].getText().toString();
+        String num_text = befores_text[number].getText().toString();
+        String inputtext = num + num_text;
 
 
-       if(alarm_manager_popup_textview.getText().toString().equals("")) {
-           alarm_manager_popup_textview.append(inputtext);
+        if (alarm_manager_popup_textview.getText().toString().equals("")) {
+            alarm_manager_popup_textview.append(inputtext);
 
-       }else{
+        } else {
 
-           alarm_manager_popup_textview.append(",  "+inputtext);
+            alarm_manager_popup_textview.append(",  " + inputtext);
 
-       }
-}//input_popup_text
+        }
+    }//input_popup_text
+
     String inputtext;
-    //체크 셀렉트 사용해서 트루인것들만 출력하기 선택한걸 false로 바꾸고
-    void delet_popup_text(int number){
 
-        inputtext="";
+    //체크 셀렉트 사용해서 트루인것들만 출력하기 선택한걸 false로 바꾸고
+    void delet_popup_text(int number) {
+
+        inputtext = "";
 
         alarm_manager_popup_textview.setText(inputtext);
-        for(int i =0; i<12;i++) {
-            if (check_selcet[i]){
+        for (int i = 0; i < 12; i++) {
+            if (check_selcet[i]) {
 
-                String num= befores[i].getText().toString();
-                String num_text=befores_text[i].getText().toString();
-                if(inputtext=="") {
+                String num = befores[i].getText().toString();
+                String num_text = befores_text[i].getText().toString();
+                if (inputtext == "") {
                     inputtext = inputtext + num + num_text;
-                }else{
+                } else {
                     inputtext = inputtext + ",  " + num + num_text;
                 }
 
@@ -269,10 +270,11 @@ switch (view.getId()){
         public void onClick(View view) {
             String email_edit = alarm_manager_email_textview.getText().toString();
             String popup_edit = alarm_manager_popup_textview.getText().toString();
-            System.out.println(popup_edit+"에드");
-            String[] popup_alarm= popup_edit.split(",");
-            Toast.makeText(Alarm_Manager_Activity.this, popup_edit, Toast.LENGTH_SHORT).show();
+            Add_Plan_Activity.alarmText.setText(popup_edit + " 팝업");
+            Add_Plan_Activity.alarmText.setTextSize(15);
+            Add_Plan_Datas.setAlarm_popdup_data(popup_edit);
 
+            finish();
         }
     };
 //---------------------------------------------------------------------------------------
@@ -336,23 +338,23 @@ switch (view.getId()){
         befores[10] = before_d2;
         befores[11] = before_w1;
 
-        befores_text[0] =before_at;
-        befores_text[1] =findViewById(R.id.before_m5_text);
+        befores_text[0] = before_at;
+        befores_text[1] = findViewById(R.id.before_m5_text);
         befores_text[2] = findViewById(R.id.before_m10_text);
         befores_text[3] = findViewById(R.id.before_m15_text);
         befores_text[4] = findViewById(R.id.before_m30_text);
-        befores_text[5] =findViewById(R.id.before_h1_text);
-        befores_text[6] =findViewById(R.id.before_h2_text);
-        befores_text[7] =findViewById(R.id.before_h3_text);
+        befores_text[5] = findViewById(R.id.before_h1_text);
+        befores_text[6] = findViewById(R.id.before_h2_text);
+        befores_text[7] = findViewById(R.id.before_h3_text);
         befores_text[8] = findViewById(R.id.before_h12_text);
-        befores_text[9] =findViewById(R.id.before_d1_text);
-        befores_text[10] =findViewById(R.id.before_d2_text);
-        befores_text[11] =findViewById(R.id.before_w1_text);
-for(int i=0;i<12;i++) {
+        befores_text[9] = findViewById(R.id.before_d1_text);
+        befores_text[10] = findViewById(R.id.before_d2_text);
+        befores_text[11] = findViewById(R.id.before_w1_text);
+        for (int i = 0; i < 12; i++) {
 
-    views[i] = findViewById(R.id.view01 + i);
+            views[i] = findViewById(R.id.view01 + i);
 
-}//for
+        }//for
 
     }//findId
 

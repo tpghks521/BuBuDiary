@@ -67,8 +67,8 @@ public class Add_Plan_alram_picker_dialog extends DialogFragment{
         minitePicker.setMaxValue(59);
         minitePicker.setMinValue(0);
 
-
-
+        yearPicker.setValue(2018);
+monthPicker.setValue(5);
 
         builder.setView(dialog).setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override

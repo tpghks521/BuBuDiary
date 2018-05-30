@@ -9,6 +9,7 @@ public class Calendar_Day_calcul_class {
     String month;
  String[] date = new String[35];
     int datesum;
+
     public Calendar_Day_calcul_class(String year, String month, String[] date, int datesum) {
         this.year = year;
         this.month = month;
