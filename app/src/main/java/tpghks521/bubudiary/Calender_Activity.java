@@ -54,7 +54,7 @@ public class Calender_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 //---------------------------------테스트
-new DBclass().loadTable(this,"777544747");
+//new DBclass().loadTable(this,"777544747");
 
 
             //---------------------------------

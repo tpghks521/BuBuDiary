@@ -137,34 +137,11 @@ public static ArrayList<Plan_list> plan_lists=new ArrayList<>();
 
     void loadTable(final Context context, final String personEmail) {
         String serverUrl = "http://tpghks521.dothome.co.kr/android/BuBudiaryLoadPlan.php";
-        SimpleMultiPartRequest multiPartRequest_load_table = new SimpleMultiPartRequest(Request.Method.POST, serverUrl, new Response.Listener<String>() {
+
+        SimpleMultiPartRequest multiPartRequest_load_table = new SimpleMultiPartRequest(Request.Method.GET, serverUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                System.out.println("여기부터" + response);
-                System.out.println("response");
-                try {
-                    JSONArray jsonArray = new JSONArray(response.toString());
-                    String s = "";
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        String year = jsonObject.getString("year");
-                        String month = jsonObject.getString("month");
-                        String day = jsonObject.getString("day");
-                        String title = jsonObject.getString("title");
-                        String place = jsonObject.getString("place");
-                        String time = jsonObject.getString("time");
-                        String rep = jsonObject.getString("rep");
-                        String alarm = jsonObject.getString("alarm");
-
-                    plan_lists.add(new Plan_list(year, month, day, title, place, time, rep, alarm));
-
-                   }
-System.out.println(plan_lists.get(0).title +" 이거당");
-                    System.out.println(plan_lists.get(1).title);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-
-                }
+                System.out.println(response+"이거");
 
 
             }
