@@ -114,9 +114,9 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
 //--------------------------------------------------------------------------------------- 이거를 메소드로 만들어서 실행시킴
 
-
-            input_plan(position,2018,5,21,maxnumber,"내생일");//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
-            new DBclass().loadTable(context,LoginMemberClass.personId);
+for(int i=0;i<DBclass.plan_lists.size();i++) {
+    input_plan(position, Integer.parseInt(DBclass.plan_lists.get(i).year),Integer.parseInt(DBclass.plan_lists.get(i).month) , Integer.parseInt(DBclass.plan_lists.get(i).day), maxnumber, DBclass.plan_lists.get(i).title);//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
+}
 //-------------------------------------------------------------------------------
 
 
@@ -149,6 +149,7 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 
 
     void input_plan(int position,int year,int month,int day,int maxtextnumber,String text){
+
         if(calendar_day_calcul_classes.get(position).year.equals(year+"")){
             if(position==month-1){
                 for(int i =0 ; i<maxtextnumber;i++) {

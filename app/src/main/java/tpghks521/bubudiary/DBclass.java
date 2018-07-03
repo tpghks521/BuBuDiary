@@ -118,6 +118,14 @@ public static ArrayList<Plan_list> plan_lists=new ArrayList<>();
                 Log.d("실패", error.toString());
             }
         });
+        if(year==null)year="null";
+        if(month==null)month="null";
+        if(day==null)day="null";
+        if(plan==null)plan="null";
+        if(time==null)time="null";
+        if(repeat==null)repeat="null";
+        if(alarm==null)alarm="null";
+
 
         multiPartRequest.addStringParam("year", year);
         multiPartRequest.addStringParam("month", month);
@@ -138,11 +146,18 @@ public static ArrayList<Plan_list> plan_lists=new ArrayList<>();
     void loadTable(final Context context, final String personEmail) {
         String serverUrl = "http://tpghks521.dothome.co.kr/android/BuBudiaryLoadPlan.php";
 
-        SimpleMultiPartRequest multiPartRequest_load_table = new SimpleMultiPartRequest(Request.Method.GET, serverUrl, new Response.Listener<String>() {
+        SimpleMultiPartRequest multiPartRequest_load_table = new SimpleMultiPartRequest(Request.Method.POST, serverUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 System.out.println(response+"이거");
 
+                String row[] =response.split("%");
+                String colume[][]= new String[row.length][];
+
+                for(int i =0;i<row.length;i++) {
+                    colume[i]  = row[i].split("&");
+                    plan_lists.add(new Plan_list(colume[i][0],colume[i][1],colume[i][2],colume[i][3],colume[i][4],colume[i][5],colume[i][6],colume[i][7]));
+                }
 
             }
         }, new Response.ErrorListener() {
