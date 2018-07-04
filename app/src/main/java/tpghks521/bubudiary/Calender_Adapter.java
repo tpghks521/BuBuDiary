@@ -115,7 +115,10 @@ public class Calender_Adapter extends RecyclerView.Adapter {
 //--------------------------------------------------------------------------------------- 이거를 메소드로 만들어서 실행시킴
 
 for(int i=0;i<DBclass.plan_lists.size();i++) {
-    input_plan(position, Integer.parseInt(DBclass.plan_lists.get(i).year),Integer.parseInt(DBclass.plan_lists.get(i).month) , Integer.parseInt(DBclass.plan_lists.get(i).day), maxnumber, DBclass.plan_lists.get(i).title);//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
+    input_plan(position, Integer.parseInt(DBclass.plan_lists.get(i).year),
+            Integer.parseInt(DBclass.plan_lists.get(i).month) ,
+            Integer.parseInt(DBclass.plan_lists.get(i).day),
+            maxnumber, DBclass.plan_lists.get(i).title);//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
 }
 //-------------------------------------------------------------------------------
 
@@ -141,6 +144,15 @@ for(int i=0;i<DBclass.plan_lists.size();i++) {
             floating_view.setOnClickListener(onClickListener);
             y = calendar_day_calcul_classes.get(position).year;
            // m = (position + 1) + "";
+//--------------------------------------------------------------------------------------- 이거를 메소드로 만들어서 실행시킴
+
+            for(int i=0;i<DBclass.plan_lists.size();i++) {
+                input_plan(position, Integer.parseInt(DBclass.plan_lists.get(i).year),
+                        Integer.parseInt(DBclass.plan_lists.get(i).month) ,
+                        Integer.parseInt(DBclass.plan_lists.get(i).day),
+                        maxnumber, DBclass.plan_lists.get(i).title);//파라미터로 년  월 일추가 하여서 사용하면 될것같다, 클래스로 만들어야 될가능성도 염두해 두어야한다.
+            }
+//-------------------------------------------------------------------------------
 
         }
 
@@ -153,9 +165,16 @@ for(int i=0;i<DBclass.plan_lists.size();i++) {
         if(calendar_day_calcul_classes.get(position).year.equals(year+"")){
             if(position==month-1){
                 for(int i =0 ; i<maxtextnumber;i++) {
+
+
+
                     if (vh.number_text[i].getText().equals(day+"")){
                         vh.addcalendar_textviews[day+1].setText(text);
+                    }else if(vh.number_text[i].getText().equals(month+"."+day+"")){
+                        vh.addcalendar_textviews[day+1].setText(text);
+
                     }
+
                 }
             }
         }

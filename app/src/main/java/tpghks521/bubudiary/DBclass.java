@@ -144,11 +144,13 @@ public static ArrayList<Plan_list> plan_lists=new ArrayList<>();
 
 
     void loadTable(final Context context, final String personEmail) {
+
         String serverUrl = "http://tpghks521.dothome.co.kr/android/BuBudiaryLoadPlan.php";
 
         SimpleMultiPartRequest multiPartRequest_load_table = new SimpleMultiPartRequest(Request.Method.POST, serverUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                plan_lists.clear();
                 System.out.println(response+"이거");
 
                 String row[] =response.split("%");
@@ -158,7 +160,7 @@ public static ArrayList<Plan_list> plan_lists=new ArrayList<>();
                     colume[i]  = row[i].split("&");
                     plan_lists.add(new Plan_list(colume[i][0],colume[i][1],colume[i][2],colume[i][3],colume[i][4],colume[i][5],colume[i][6],colume[i][7]));
                 }
-
+                Calender_Activity.calender_adapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -170,6 +172,7 @@ public static ArrayList<Plan_list> plan_lists=new ArrayList<>();
         multiPartRequest_load_table.addStringParam("personEmail", personEmail);
         RequestQueue requestQueue_loadTable = Volley.newRequestQueue(context);
         requestQueue_loadTable.add(multiPartRequest_load_table);
+
     }//loadTable
 
 

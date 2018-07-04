@@ -22,10 +22,10 @@ import com.kakao.util.helper.log.Logger;
 
 public class KakaoSignupActivity extends AppCompatActivity {
 
-    private String userName;
-    private String userId;
-    private String profileUrl;
-    FragmentManager fragmentManager;
+     static String userName;
+     static String userId;
+     static String profileUrl;
+     static FragmentManager fragmentManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -55,7 +55,7 @@ public class Add_Plan_Activity extends AppCompatActivity {
         addactivity_time = findViewById(R.id.addactivity_time);
         add_activity_alarm = findViewById(R.id.add_activity_alarm);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         year = intent.getStringExtra("year");
         month = intent.getStringExtra("month");
         day = intent.getStringExtra("day");
@@ -89,7 +89,16 @@ public class Add_Plan_Activity extends AppCompatActivity {
 
                 new DBclass().table_uploadDB(Add_Plan_Activity.this, dates[0], dates[1], dates[2], plan, addactivity_time.getText().toString(), Add_Plan_Datas.getRepeat_week_data(), Add_Plan_Datas.getAlarm_popdup_data());
 
+
+
+                Calender_Activity.calender_adapter.notifyDataSetChanged();
+              //  Intent intent1 = new Intent(Add_Plan_Activity.this,Calender_Activity.class);
+                DBclass dBclass = new DBclass();
+                dBclass.loadTable(Add_Plan_Activity.this,KakaoSignupActivity.userId);
+                Calender_Activity.calender_adapter.notifyDataSetChanged();
                 finish();
+
+
             }
         });
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
